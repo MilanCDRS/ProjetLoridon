@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS Specialite(
     url_Image VARCHAR(50),
     PRIMARY KEY (id,numero),
     FOREIGN KEY (numero) references Departement(numero),
-    FOREIGN KEY (codeType) references Type(type)
+    FOREIGN KEY (codeType) references Type(code)
 )ENGINE = InnoDB;
 
 DROP TABLE IF EXISTS User;
@@ -63,7 +63,6 @@ CREATE TABLE IF NOT EXISTS Favori(
     FOREIGN KEY(idSpecialite) REFERENCES Specialite(id)
 )Engine=InnoDB;
 
-
 INSERT INTO Region (libelle) VALUES
 ("Auvergne-Rhône-Alpes"),
 ("Bourgogne-Franche-Comté"),
@@ -79,7 +78,6 @@ INSERT INTO Region (libelle) VALUES
 ("Pays de la Loire"),
 ("Provence-Alpes-Côte d'Azur"),
 ("DOM TOM");
-
 
 INSERT INTO Departement (numero, code, nom) VALUES
 ('01', 1,'Ain'),
@@ -183,6 +181,17 @@ INSERT INTO Departement (numero, code, nom) VALUES
 ('973', 14,'Guyane'),
 ('972', 14,'Martinique'),
 ('974', 14,'Réunion');
+
+INSERT INTO Type (type) VALUES
+('Entrée'),
+('Plat'),
+('Dessert'),
+('Gâteaux'),
+('Viennoiserie'),
+('Vin'),
+('Fromage'),
+('Brevages & Autres'),
+('Autre');
 
 
 
