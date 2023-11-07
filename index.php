@@ -13,4 +13,6 @@ else{
 $fichier = ctrlPrincipal($action);
 include "$racine/controlleur/$fichier";
 
+//Connexion à la base de donnée
+include "modele/cnxBDD.php";
 ?>
