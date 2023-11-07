@@ -1,13 +1,13 @@
 <?php
 class Region{
     //Variables 
-    private $code;
-    private $libelle;
+    private $_code;
+    private $_libelle;
 
     //Constructor
     public function __construct($code, $libelle){
-        $this->code=$code;
-        $this->libelle=$libelle;
+        $this->_code=$code;
+        $this->_libelle=$libelle;
     }
 
     //Getters
@@ -22,7 +22,7 @@ class Region{
     public function __set($propriete, $value) {
         switch ($propriete) {
             case "code" : $this->_code = $value; break;
-            case "libelle" : return $this->libelle = $value; break;
+            case "libelle" : return $this->_libelle = $value; break;
         }
     }
     
