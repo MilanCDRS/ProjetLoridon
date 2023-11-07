@@ -14,5 +14,4 @@ function connexionPDO() {
         die();
     }
 }
-$cnx = connexionPDO();
 ?>

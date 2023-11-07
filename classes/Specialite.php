@@ -16,7 +16,7 @@ class Specialite{
         $this->_lib = $lib;
         $this->_ingredients = $ingredients;
         $this->_description = $description;
-        $this->_url_image = "images/departement/$id.png";
+        //$this->_url_image = "images/departement/$id.png";
     }
 
     // Getters 
@@ -47,12 +47,16 @@ class Specialite{
     public static function GetSpecialites(){
         $lesSpecialites = array();
         try{
-            $req->prepare("SELECT id, numeroDep, lib, ingredients, description FROM Specialite;");
+            $cnx = connexionPDO();
+            $req = $cnx->prepare("select id, numeroDep, lib, ingredients, description FROM Specialite;");
             $req->execute();
-            $req = $req->fetch(PDO::FETCH_ASSOC);
-            while ($req) {
-                $spe = new Specialite($req['id'], $req['numeroDep'], $req['lib'], $req['ingredients'], $req['description']);
+
+            $res = $req->fetch(PDO::FETCH_ASSOC);
+            while ($res) {
+                $spe = new Specialite($res['id'], $res['numeroDep'], $res['lib'], $res['ingredients'], $res['description']);
                 array_push($lesSpecialites, $spe); // ajoute le nouvelle spe dans la liste
+                //$resultat[] = $ligne;
+                $res = $req->fetch(PDO::FETCH_ASSOC);
             }
         }
         catch (PDOExeption $e)
