@@ -22,7 +22,7 @@ class Region{
     public function __set($propriete, $value) {
         switch ($propriete) {
             case "code" : $this->_code = $value; break;
-            case "libelle" : return $this->_libelle = $value; break;
+            case "libelle" : $this->_libelle = $value; break;
         }
     }
     
