@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Region(
 	code INT(3) auto_increment,
     libelle VARCHAR(50),
     PRIMARY KEY (code)
-)ENGINE = InnoBD;
+)ENGINE = InnoDB;
 
 DROP TABLE IF EXISTS Departement;
 CREATE TABLE IF NOT EXISTS Departement(
@@ -17,19 +17,43 @@ CREATE TABLE IF NOT EXISTS Departement(
     blason VARCHAR(50),
     PRIMARY KEY (code,numero),
     FOREIGN KEY (code) REFERENCES Region(code)
-)ENGINE = InnoBD;
+)ENGINE = InnoDB;
+
+ALTER TABLE Departement
+ADD INDEX idx_numero (numero);
 
 DROP TABLE IF EXISTS Specialite;
 CREATE TABLE IF NOT EXISTS Specialite(
-	numero INT(3),
-    id INT(10) auto_increment,
+	id INT(10) auto_increment,
+    numero VARCHAR(3),
     lib VARCHAR(50),
     ingredients VARCHAR(50),
     description VARCHAR(50),
     image VARCHAR(50),
-    PRIMARY KEY (numero,id),
+    PRIMARY KEY (id,numero),
     FOREIGN KEY (numero) references Departement(numero)
-)ENGINE = InnoBD;
+)ENGINE = InnoDB;
+
+DROP TABLE IF EXISTS User;
+CREATE TABLE IF NOT EXISTS User(
+	ident INT(10) auto_increment,
+    mail VARCHAR(320) NOT NULL,
+    mdp VARCHAR(30) NOT NULL,
+    pseudo VARCHAR(30) NOT NULL,
+    dateInscription TIMESTAMP,
+    PRIMARY KEY(ident,mail), 
+    CONSTRAINT CK_length_MPD CHECK (length(mdp)>12)
+) Engine=InnoDB;
+
+DROP TABLE IF EXISTS Favori;
+CREATE TABLE IF NOT EXISTS Favori(
+	identUser INT(10) NOT NULL,
+    idSpecialite INT(10) NOT NULL,
+    PRIMARY KEY(identUser,idSpecialite),
+    FOREIGN KEY(identUser) REFERENCES User(ident),
+    FOREIGN KEY(idSpecialite) REFERENCES Specialite(id)
+)Engine=InnoDB;
+
 
 INSERT INTO Region (libelle) VALUES
 ("Auvergne-Rhône-Alpes"),
@@ -150,4 +174,8 @@ INSERT INTO Departement (numero, code, nom) VALUES
 ('973', 14,'Guyane'),
 ('972', 14,'Martinique'),
 ('974', 14,'Réunion');
+
+
+
+
 
