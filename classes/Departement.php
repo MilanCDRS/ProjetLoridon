@@ -28,9 +28,9 @@ class Departement{
     public function __set($propriete, $value) {
         switch ($propriete) {
             case "numero" : $this->_numero = $value; break;
-            case "code" : return $this->_code = $value; break;
-            case "nom" : return $this->_nom = $value; break;
-            case "blason" : return $this->_blason = $value; break;
+            case "code" : $this->_code = $value; break;
+            case "nom" : $this->_nom = $value; break;
+            case "blason" : $this->_blason = $value; break;
         }
     }
     
