@@ -22,16 +22,25 @@ CREATE TABLE IF NOT EXISTS Departement(
 ALTER TABLE Departement
 ADD INDEX idx_numero (numero);
 
+DROP TABLE IF EXISTS Type;
+CREATE TABLE IF NOT EXISTS Type(
+	code INT(3) auto_increment,
+    type VARCHAR(30) NOT NULL,
+    PRIMARY KEY(code)
+)Engine=InnoDB; 
+
 DROP TABLE IF EXISTS Specialite;
 CREATE TABLE IF NOT EXISTS Specialite(
 	id INT(10) auto_increment,
     numero VARCHAR(3),
     lib VARCHAR(50),
+    codeType INT(3),
     ingredients VARCHAR(50),
     description VARCHAR(50),
     url_Image VARCHAR(50),
     PRIMARY KEY (id,numero),
-    FOREIGN KEY (numero) references Departement(numero)
+    FOREIGN KEY (numero) references Departement(numero),
+    FOREIGN KEY (codeType) references Type(type)
 )ENGINE = InnoDB;
 
 DROP TABLE IF EXISTS User;
