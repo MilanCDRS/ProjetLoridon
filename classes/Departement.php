@@ -1,17 +1,17 @@
 <?php
 class Departement{
     //Variables 
-    private $numero;
-    private $code;
-    private $nom;
-    private $blason;
+    private $_numero;
+    private $_code;
+    private $_nom;
+    private $_blason;
 
     //Constructor
     public function __construct($numero, $code, $nom, $blason){
-        $this->numero=$numero;
-        $this->code= $code;
-        $this->nom=$nom;
-        $this->blason=$blason;
+        $this->_numero=$numero;
+        $this->_code= $code;
+        $this->_nom=$nom;
+        $this->_blason=$blason;
     }
 
     //Getters
