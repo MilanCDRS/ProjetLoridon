@@ -13,6 +13,7 @@ function ctrlPrincipal($action){
     $lesActions = array();
     $lesActions["defaut"] = "specialites.php";
     $lesActions["specialites"] = "specialites.php";
+	$lesActions["login"] = "login.php";
 
 
     if (array_key_exists($action, $lesActions)) {
