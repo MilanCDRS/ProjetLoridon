@@ -38,6 +38,21 @@ function GetRegionByCode($code){
     return $region;
 }
 
+// Recupere la region en fct de son nom
+function GetRegionByNom($libele){
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select code, libelle from region where libele = '$libele'");
+        $req->execute();
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+
+        $region = new Region($res['code'], $res['libelle']);
+    } catch (PDOException $e) {
+        die();
+    }
+    return $region;
+}
+
 // Recupére toutes les Departements
 function GetDepartements(){
     $deparetements = array();

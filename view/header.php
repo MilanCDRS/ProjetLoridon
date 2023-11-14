@@ -6,7 +6,7 @@
         <style type="text/css">
             @import url("css/style.css");
             @import url("css/specialites.css");
-            @import url("css/carte.css");
+            @import url("css/cart.css");
         </style>
     </head>
     <body>
