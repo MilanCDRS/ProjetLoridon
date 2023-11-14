@@ -2,7 +2,7 @@
 if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
     $racine="..";
 }
-include_once "$racine/modele/authBDD.php";
+include_once "$racine/model/authBDD.php";
 
 // creation du menu burger
 $menuBurger = array();
