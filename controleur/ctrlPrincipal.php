@@ -11,7 +11,8 @@ include "$racine/classes/User.php";
 // en fct de l'action, revoie sur les autres controlleurs
 function ctrlPrincipal($action){
     $lesActions = array();
-    $lesActions["defaut"] = "menu.php";
+    $lesActions["defaut"] = "specialites.php";
+    $lesActions["specialites"] = "specialites.php";
 
 
     if (array_key_exists($action, $lesActions)) {

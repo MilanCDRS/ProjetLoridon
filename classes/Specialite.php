@@ -46,30 +46,6 @@ class Specialite{
             case "url_image" : $this->_url_image = $value; break;
         }
     }
-
-    // Recupére toutes les specialités de la base de donnée
-    public static function GetSpecialites(){
-        $lesSpecialites = array();
-        try{
-            $cnx = connexionPDO();
-            $req = $cnx->prepare("select id, numeroDep, lib, ingredients, description FROM Specialite;");
-            $req->execute();
-
-            $res = $req->fetch(PDO::FETCH_ASSOC);
-            while ($res) {
-                $spe = new Specialite($res['id'], $res['numeroDep'], $res['lib'], $res['ingredients'], $res['description']);
-                array_push($lesSpecialites, $spe); // ajoute le nouvelle spe dans la liste
-                //$resultat[] = $ligne;
-                $res = $req->fetch(PDO::FETCH_ASSOC);
-            }
-        }
-        catch (PDOExeption $e)
-        { 
-            echo 'oops';
-        }
-
-        return $lesSpecialites;
-    }
 }
 
 ?>
