@@ -10,7 +10,7 @@ class Specialite{
 
 
     // Constructor
-    public function __construct($id, Departement $departement, $lib,Type $type, $ingredients, $description){
+    public function __construct($id, Departement $departement, $lib, Type $type, $ingredients, $description){
         $this->_id = $id;
         $this->_departement = $departement;
         $this->_lib = $lib;
