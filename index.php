@@ -11,5 +11,5 @@ else{
 }
 
 $fichier = ctrlPrincipal($action);
-include "$racine/controlleur/$fichier";
+include "$racine/controler/$fichier";
 ?>
