@@ -25,14 +25,32 @@ function GetRegions(){
 
 // Recupere la region en fct de son code
 function GetRegionByCode($code){
-    $r;
-    foreach(GetRegions() as $reg){
-        if($reg->code == $code)
-        {
-            $r = $reg;
-        }
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select code, libelle from region where code = '$code'");
+        $req->execute();
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+
+        $region = new Region($res['code'], $res['libelle']);
+    } catch (PDOException $e) {
+        die();
     }
-    return $r;
+    return $region;
+}
+
+// Recupere la region en fct de son nom
+function GetRegionByNom($libele){
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select code, libelle from region where libele = '$libele'");
+        $req->execute();
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+
+        $region = new Region($res['code'], $res['libelle']);
+    } catch (PDOException $e) {
+        die();
+    }
+    return $region;
 }
 
 // Recupére toutes les Departements
@@ -61,12 +79,16 @@ function GetDepartements(){
 
 // Recupere la departements en fct de son code
 function GetDepartementByNumero($numero){
-    $departement;
-    foreach(GetDepartementByNumero() as $dep){
-        if($dep->numero == $numero)
-        {
-            $departement = $dep;
-        }
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select numero, codeRegion, nom from departement where numero = '$numero'");
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+        $region = GetRegionByCode($res['codeRegion']);
+        $departement = new Departement($res['numero'], $region, $res['nom']);
+    } catch (PDOException $e) {
+        die();
     }
     return $departement;
 }
@@ -81,8 +103,8 @@ function GetTypes(){
 
         $res = $req->fetch(PDO::FETCH_ASSOC);
         while ($res) {
-            $dep = new Type($res['code'], $res['type']);
-            array_push($deparetements, $dep);
+            $t = new Type($res['code'], $res['type']);
+            array_push($types, $t);
             $res = $req->fetch(PDO::FETCH_ASSOC);
         }
     }
@@ -96,12 +118,15 @@ function GetTypes(){
 
 // Recupere la type en fct de son code
 function GetTypeByCode($code){
-    $type;
-    foreach(GetDepartementByNumero() as $t){
-        if($t->code == $code)
-        {
-            $type = $t;
-        }
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select code, type from type where code = '$code'");
+        $req->execute();
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+
+        $type = new Type($res['code'], $res['type']);
+    } catch (PDOException $e) {
+        die();
     }
     return $type;
 }
@@ -114,6 +139,32 @@ function GetSpecialites(){
     try{
         $cnx = connexionPDO();
         $req = $cnx->prepare("select id, numeroDep, lib, codeType, ingredients, description FROM Specialite;");
+        $req->execute();
+
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+        while ($res) {
+            $dep = GetDepartementByNumero($res['numeroDep']);
+            $type = GetTypeByCode($res['codeType']);
+            $spe = new Specialite($res['id'], $dep, $res['lib'], $type, $res['ingredients'], $res['description']);
+            array_push($lesSpecialites, $spe);
+
+            $res = $req->fetch(PDO::FETCH_ASSOC);
+        }
+    }
+    catch (PDOExeption $e)
+    { 
+        //echo 'oops';
+    }
+
+    return $lesSpecialites;
+}
+
+// Recupére toutes les specialités par region
+function GetSpecialitesByRegion(Region $region){
+    $lesSpecialites = array();
+    try{
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select id, numeroDep, lib, codeType, ingredients, description FROM Specialite inner join departement on numeroDep = numero WHERE codeRegion = $region->code ;");
         $req->execute();
 
         $res = $req->fetch(PDO::FETCH_ASSOC);
