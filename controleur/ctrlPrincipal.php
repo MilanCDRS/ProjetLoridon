@@ -1,7 +1,7 @@
 <?php 
 
 // include toutes les classes
-include_once "$racine/modele/cnxBDD.php";
+include_once "$racine/model/cnxBDD.php";
 include "$racine/classes/Departement.php";
 include "$racine/classes/Favori.php";
 include "$racine/classes/Region.php";

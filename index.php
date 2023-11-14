@@ -1,6 +1,6 @@
 <?php 
 include "getRacine.php";
-include "$racine/controlleur/ctrlPrincipal.php";
+include "$racine/controler/ctrlPrincipal.php";
 
 
 if (isset($_GET["action"])){

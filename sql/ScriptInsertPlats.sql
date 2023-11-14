@@ -1,4 +1,4 @@
-INSERT INTO specialite (numero, lib, codeType, ingredients, description) VALUES
+INSERT INTO specialite (numeroDep, lib, codeType, ingredients, description) VALUES
 ("01", "Bœuf de race limousine", 2, "Viande de bœuf limousin.", "Viande très goûteuse."),
 ("01", "Moutarde à la violette", 8, "Graines de moutarde, moût de raisin.", "Mélange de graines de moutarde et de moût de raisin."),
 ("01", "Châtaigne", 4, "Châtaignes.", "Fruit qui a apporté pendant des siècles la nourriture et la gagne-pain de ses habitants."),

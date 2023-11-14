@@ -32,12 +32,11 @@ CREATE TABLE IF NOT EXISTS Type(
 DROP TABLE IF EXISTS Specialite;
 CREATE TABLE IF NOT EXISTS Specialite(
 	id INT(10) auto_increment,
-    numero VARCHAR(3),
+    numeroDep VARCHAR(3),
     lib VARCHAR(50),
     codeType INT(3),
-    ingredients VARCHAR(50),
-    description VARCHAR(50),
-    url_Image VARCHAR(50),
+    ingredients VARCHAR(400),
+    description VARCHAR(400),
     PRIMARY KEY (id,numero),
     FOREIGN KEY (numero) references Departement(numero),
     FOREIGN KEY (codeType) references Type(code)
