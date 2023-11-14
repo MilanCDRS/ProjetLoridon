@@ -1,3 +1,4 @@
+<H1>Liste des Spécialités<H1>
 <?php 
 foreach($lesSpecialites as $spe)
 {
