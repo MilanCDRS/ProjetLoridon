@@ -159,6 +159,23 @@ function GetSpecialites(){
     return $lesSpecialites;
 }
 
+// Recupére la spe avec son id
+function GetSpecialiteById($id){
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select id, numeroDep, lib, codeType, ingredients, description FROM Specialite inner join departement on numeroDep = numero WHERE id = $id ;");
+        $req->execute();
+        $res = $req->fetch(PDO::FETCH_ASSOC);
+        
+        $dep = GetDepartementByNumero($res['numeroDep']);
+        $type = GetTypeByCode($res['codeType']);
+        $spe = new Specialite($res['id'], $dep, $res['lib'], $type, $res['ingredients'], $res['description']);
+    } catch (PDOException $e) {
+        die();
+    }
+    return $spe;
+}
+
 // Recupére toutes les specialités par region
 function GetSpecialitesByRegion(Region $region){
     $lesSpecialites = array();
