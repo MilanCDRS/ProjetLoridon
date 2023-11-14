@@ -12,11 +12,10 @@ CREATE TABLE IF NOT EXISTS Region(
 DROP TABLE IF EXISTS Departement;
 CREATE TABLE IF NOT EXISTS Departement(
 	numero VARCHAR(3),
-    code INT(3),
+    codeRegion INT(3),
     nom VARCHAR(50),
-    blason VARCHAR(50),
-    PRIMARY KEY (code,numero),
-    FOREIGN KEY (code) REFERENCES Region(code)
+    PRIMARY KEY (codeRegion,numero),
+    FOREIGN KEY (codeRegion) REFERENCES Region(code)
 )ENGINE = InnoDB;
 
 ALTER TABLE Departement
@@ -37,8 +36,8 @@ CREATE TABLE IF NOT EXISTS Specialite(
     codeType INT(3),
     ingredients VARCHAR(400),
     description VARCHAR(400),
-    PRIMARY KEY (id,numero),
-    FOREIGN KEY (numero) references Departement(numero),
+    PRIMARY KEY (id,numeroDep),
+    FOREIGN KEY (numeroDep) references Departement(numero),
     FOREIGN KEY (codeType) references Type(code)
 )ENGINE = InnoDB;
 
@@ -78,7 +77,7 @@ INSERT INTO Region (libelle) VALUES
 ("Provence-Alpes-Côte d'Azur"),
 ("DOM TOM");
 
-INSERT INTO Departement (numero, code, nom) VALUES
+INSERT INTO Departement (numero, codeRegion, nom) VALUES
 ('01', 1,'Ain'),
 ('02', 7, 'Aisne'),
 ('03', 1,'Allier'),
