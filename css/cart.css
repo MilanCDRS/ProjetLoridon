@@ -14,6 +14,6 @@ g:hover path {
     fill: rgb(223, 108, 108);
 }
 
-g path:hover {
+/*g path:hover {
     fill: #ff0000;
-}
+}*/
