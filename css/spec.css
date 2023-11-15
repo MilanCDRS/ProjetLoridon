@@ -1,5 +1,5 @@
 .Specialite{
-    width:400px;
+    width:40%;
     margin:5px;
     padding: 10px;
     border: solid 1px black;
@@ -7,5 +7,13 @@
 }
 
 p{
-    color:red;
+    color:rgb(255, 0, 0);
+}
+
+.blason{
+    width: 10%;    
+}
+
+.apercu{
+    width: 200px;    
 }

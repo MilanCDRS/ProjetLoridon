@@ -5,8 +5,8 @@
         <title>BOUFFE DE NOS TERROIRS</title>
         <style type="text/css">
             @import url("css/style.css");
-            @import url("css/specialites.css");
-            @import url("css/cart.css");
+            @import url("css/spec.css");
+            @import url("css/carte.css");
         </style>
     </head>
     <body>
