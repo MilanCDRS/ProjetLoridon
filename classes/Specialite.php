@@ -18,6 +18,7 @@ class Specialite{
         $this->_type = $type;
         $this->_ingredients = $ingredients;
         $this->_description = $description;
+        $this->_urlImg = $this->GetUrlImg();
     }
 
     // Getters 
@@ -47,10 +48,11 @@ class Specialite{
     }
 
     public function GetUrlImg(){
-        $url = "images/specialite/$_id.png";
-        while(!file_exists($url)){
-            $num = rand(1,5);
-            $url = "images/ImagesIcones/SansFond/$_type->type$num.png";
+        $url = "images/specialite/".$this->_id.".png";
+        if(!file_exists($url)){
+            $num = rand(1,1);
+            $img= $this->_type->type;
+            $url = "images/ImagesIcones/SansFond/$img$num.png";
         }
         return $url;
     }
