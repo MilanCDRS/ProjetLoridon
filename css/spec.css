@@ -6,6 +6,10 @@
     background-color: lightgoldenrodyellow;
 }
 
+div .Specialite:hover{
+    cursor:pointer;
+}
+
 p{
     color:rgb(255, 0, 0);
 }

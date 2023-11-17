@@ -167,8 +167,6 @@
 const regions = document.querySelectorAll("g");
 regions.forEach((reg) => 
 	reg.addEventListener("click", e => {
-		a = reg.region-name.ToString
-		console.log(a)
 		window.location.href = "index.php?r="+reg.id;
 	})	
 )

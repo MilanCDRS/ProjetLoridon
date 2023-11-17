@@ -7,7 +7,7 @@ foreach($lesSpecialites as $spe)
 ?>
     <div class=Specialite id="<?php echo $spe->id; ?>">
         <img class=blason src="images/departements/<?php echo $spe->departement->numero;?>.png" >
-        <img class=apercu src="images/ImagesIcones/AvecFond/t1.jfif" >
+        <img class=apercu src="<?php echo $spe->GetUrlImg();?>">        
         <H6><?php echo $spe->lib;?><H6>
         <p><?php echo $spe->description;?></p>        
     </div>
@@ -17,3 +17,14 @@ foreach($lesSpecialites as $spe)
 
 ?>
 
+<script>
+// recupere l'id de la spe selectionnée
+
+const spes = document.querySelectorAll("div");
+spes.forEach((spe) => 
+spe.addEventListener("dblclick", e => { // double click
+		window.location.href = "index.php?s="+spe.id;
+	})	
+)
+
+</script>

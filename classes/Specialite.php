@@ -7,6 +7,7 @@ class Specialite{
     private Type $_type;
     private $_ingredients;
     private $_description;
+    private $_urlImg;
 
 
     // Constructor
@@ -28,6 +29,7 @@ class Specialite{
             case "type" : return $this->_type; break;
             case "ingredients" : return $this->_ingredients; break;
             case "description" : return $this->_description; break;
+            case "urlImg" : return $this->_urlImg; break;
         }
     }
 
@@ -40,7 +42,17 @@ class Specialite{
             case "type" : $this->_type = $value; break;
             case "ingredients" : $this->_ingredients = $value; break;
             case "description" : $this->_description = $value; break;
+            case "urlImg" : return $this->_urlImg; break;
         }
+    }
+
+    public function GetUrlImg(){
+        $url = "images/specialite/$_id.png";
+        while(!file_exists($url)){
+            $num = rand(1,5);
+            $url = "images/ImagesIcones/SansFond/$_type->type$num.png";
+        }
+        return $url;
     }
 }
 
