@@ -1,12 +1,9 @@
 <H1>Bienvenue dans le CRUD!</H1>
-<?php 
-echo $spe->id;
-?>
 
 <form action="modifSpe" method="POST">
     <div>
       <label for="libelle">Nom :</label>
-      <input type="text" id="libelle" name="libelle" required>
+      <input type="text" id="libelle" name="libelle" value="<?php echo $spe->lib?>" required></input>
     </div>
     <div>
         <label for="departement">Département :</label>
@@ -14,7 +11,10 @@ echo $spe->id;
             <option value="">-- Sélectionnez le département --</option>
             <?php 
             foreach($lesDeps as $d){
-              echo "<option value=$d->numero>$d->numero - $d->nom</option>";
+              echo "<option value=$d->numero";
+              if($d->numero == $spe->departement->numero)
+                echo " selected";
+              echo ">$d->numero - $d->nom</option>";
             }
             ?>
         </select>
@@ -25,22 +25,25 @@ echo $spe->id;
             <option value="">-- Sélectionnez le type --</option>
             <?php 
             foreach($lesTypes as $t){
-              echo "<option value=$t->code>$t->type</option>";
+              echo "<option value=$t->code";
+              if($t->code == $spe->type->code)
+                echo " selected";
+              echo ">$t->type</option>";
             }
             ?>
         </select>
     </div>
     <div>
       <label for="ingredients">Ingrédients :</label>
-      <textarea id="ingredients" name="ingredients" required></textarea>
+      <textarea id="ingredients" name="ingredients" required><?php echo $spe->ingredients?></textarea>
     </div>
     <div>
       <label for="description">Description :</label>
-      <textarea id="description" name="description" required></textarea>
+      <textarea id="description" name="description" required><?php echo $spe->description?></textarea>
     </div>
     <div>
       <label for="image">Image :</label>
-      <input type="file" id="image" name="image" accept="image/*" required>
+      <input type="file" id="image" name="image" accept="image/*">
     </div>
     <div>
       <input type="submit" value="Envoyer">
