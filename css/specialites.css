@@ -1,0 +1,11 @@
+.Specialite{
+    width:400px;
+    margin:5px;
+    padding: 10px;
+    border: solid 1px black;
+    background-color: lightgoldenrodyellow;
+}
+
+p{
+    color:red;
+}

@@ -27,7 +27,7 @@ function getUtilisateurByIdU($IdU) {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from utilisateur where ident=:ident");
+        $req = $cnx->prepare("select * from User where ident=:ident");
         $req->bindValue(':ident', $IdU, PDO::PARAM_STR);
         $req->execute();
 
@@ -37,6 +37,34 @@ function getUtilisateurByIdU($IdU) {
         die();
     }
     return $resultat;
+}
+function getUtilisateurBymailU($mailU) {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from User where mail=:mail");
+        $req->bindValue(':mail', $mailU, PDO::PARAM_STR);
+        $req->execute();
+        
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        echo("testERR");
+        die();
+    }
+    return $resultat;
+}
+
+function getMailULoggedOn(){
+    if (isLoggedOn()){
+        $ret = $_SESSION["mailU"];
+    }
+    else {
+        $ret = "";
+    }
+    return $ret;
+        
 }
 
 

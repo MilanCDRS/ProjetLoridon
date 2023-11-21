@@ -1,0 +1,19 @@
+.carte {
+    width: 35%;
+    margin: 0;
+}
+path {
+    stroke: #000000;
+    stroke-width: 1px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-opacity: .25;
+    fill: #ffffff;
+}
+g:hover path {
+    fill: rgb(223, 108, 108);
+}
+
+g path:hover {
+    fill: #ff0000;
+}

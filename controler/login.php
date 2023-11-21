@@ -5,41 +5,41 @@ if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
 include_once "$racine/model/authBDD.php";
 
 // creation du menu burger
-$menuBurger = array();
-$menuBurger[] = Array("url"=>"./?action=connexion","label"=>"Connexion");
-$menuBurger[] = Array("url"=>"./?action=inscription","label"=>"Inscription");
+//$menuBurger = array();
+//$menuBurger[] = Array("url"=>"./?action=connexion","label"=>"Connexion");
+//$menuBurger[] = Array("url"=>"./?action=inscription","label"=>"Inscription");
 
 // recuperation des donnees GET, POST, et SESSION
-if (!isset($_POST["mailU"]) || !isset($_POST["mdpU"])){
-    // on affiche le formulaire de connexion
-    $titre = "authentification";
-    include "$racine/vue/entete.html.php";
-    include "$racine/vue/vueAuthentification.php";
-    include "$racine/vue/pied.html.php";
+if (isset($_POST["mail"]) && isset($_POST["mdp"])){
+    $mailU=$_POST["mail"];
+    $mdpU=$_POST["mdp"];
 }
 else
 {
-    // à completer
-    $mailU=$_POST["mailU"];
-    $mdpU=$_POST["mdpU"];
-    
-    login($mailU,$mdpU);
+    $mailU="";
+    $mdpU="";
+}
 
-    if (isLoggedOn()){ // si l'utilisateur est connecté on affiche la vue de confirmation
-        $titre = "confirmation";
-        include "$racine/vue/entete.html.php";
-        include "$racine/vue/vueConfirmationAuth.php";
-        include "$racine/vue/pied.html.php";
+// appel des fonctions permettant de recuperer les donnees utiles a l'affichage 
 
-    }
-    else{
-        // l'utilisateur n'est pas connecté, on affiche le formulaire de connexion
-        $titre = "authentification";
-        include "$racine/vue/entete.html.php";
-        include "$racine/vue/vueAuthentification.php";
-        include "$racine/vue/pied.html.php";
-    }
-    
+
+// traitement si necessaire des donnees recuperees
+
+login($mailU,$mdpU);
+
+if (isLoggedOn()){ // si l'utilisateur est connecté on redirige vers le controleur monProfil
+    //include "$racine/controleur/monProfil.php";
+    $titre = "confirmation";
+    include "$racine/view/header.php";
+    include "$racine/view/viewConfirmedAuth.php";
+    include "$racine/view/footer.php";
+}
+else{ // l'utilisateur n'est pas connecté, on affiche le formulaire de connexion
+    // appel du script de vue 
+    $titre = "authentification";
+    include "$racine/view/header.php";
+    include "$racine/view/viewAuth.php";
+    include "$racine/view/footer.php";
 }
 
 ?>
