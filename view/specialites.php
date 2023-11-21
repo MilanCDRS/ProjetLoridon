@@ -20,10 +20,10 @@ foreach($lesSpecialites as $spe)
 <script>
 // recupere l'id de la spe selectionnée
 
-const spes = document.querySelectorAll("div");
+const spes = document.querySelectorAll(".Specialite"); // recupere toutes les spe
 spes.forEach((spe) => 
 spe.addEventListener("dblclick", e => { // double click
-		window.location.href = "index.php?s="+spe.id;
+		window.location.href = "index.php?s="+spe.id; //variable s dans url
 	})	
 )
 

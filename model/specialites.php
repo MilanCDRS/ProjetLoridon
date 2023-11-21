@@ -58,7 +58,7 @@ function GetDepartements(){
     $deparetements = array();
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select numero, codeRegion, nom FROM Departement;");
+        $req = $cnx->prepare("select numero, codeRegion, nom FROM Departement Order By numero;");
         $req->execute();
 
         $res = $req->fetch(PDO::FETCH_ASSOC);

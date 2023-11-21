@@ -47,12 +47,17 @@ class Specialite{
         }
     }
 
+    // récupere le chemin de l'image associée à la spécialité
+    // Si il existe une image, alors elle est stockée dans le dossier suivant Images > Specialites 
+    // le nom de l'image est son id 
+    // si l'image n'est pas trouvée, alors elle n'existe pas et dans ce cas on associe une image exemple aléatoire dans le dossier Images > ImagesIcones > SansFond 
+
     public function GetUrlImg(){
         $url = "images/specialite/".$this->_id.".png";
         if(!file_exists($url)){
-            $num = rand(1,1);
+            $num = rand(1,2);
             $img= $this->_type->type;
-            $url = "images/ImagesIcones/SansFond/$img$num.png";
+            $url = "images/IconesSpe/SansFond/$img$num.png";
         }
         return $url;
     }

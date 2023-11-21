@@ -33,5 +33,4 @@ function AjouterSpecialite(Specialite $spe){
         die();
     } 
 }
-
 ?>

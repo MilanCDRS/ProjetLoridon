@@ -10,6 +10,7 @@ include "view/header.php";
 $spe;
 $lesSpecialites;
 $libTitre = "Liste des Spécialités";
+
 // recupere toutes les specialites de la region
 if(isset($_GET['r']))
 {
@@ -20,6 +21,8 @@ if(isset($_GET['r']))
     include "view/carte.php";
     include "view/specialites.php";
 }
+
+// Affiche une seule spécialité
 else if(isset($_GET['s']))
 {
     $idSpe = $_GET['s']; 
@@ -33,9 +36,7 @@ else{
     include "view/specialites.php";
 }
 
-// Affiche une seule spécialité
 
-// recupere la specialite
 
 
 include "view/footer.php";

@@ -10,6 +10,11 @@ else{
     $action = "defaut";
 }
 
+//CRUD
+if(isset($_GET["crud"])){
+    $action = "crud";
+}
+
 $fichier = ctrlPrincipal($action);
 include "$racine/controler/$fichier";
 ?>
