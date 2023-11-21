@@ -3,13 +3,12 @@
 // include toutes les classes
 include_once "$racine/model/authBDD.php"; //Pour utiliser isLoggedOn()
 include_once "$racine/model/cnxBDD.php";
-include_once "$racine/classes/Departement.php";
-include_once "$racine/classes/Favori.php";
-include_once "$racine/classes/Region.php";
-include_once "$racine/classes/Specialite.php";
-include_once "$racine/classes/Type.php";
-include_once "$racine/classes/User.php";
-
+include "$racine/classes/Departement.php";
+include "$racine/classes/Favori.php";
+include "$racine/classes/Region.php";
+include "$racine/classes/Specialite.php";
+include "$racine/classes/Type.php";
+include "$racine/classes/User.php";
 
 // en fct de l'action, revoie sur les autres controlleurs
 function ctrlPrincipal($action){
@@ -18,6 +17,7 @@ function ctrlPrincipal($action){
     $lesActions["specialites"] = "specialites.php";
 	$lesActions["login"] = "login.php";
     $lesActions["crud"] = "crud.php";
+    $lesActions["logout"] = "logout.php";
 
 
     if (array_key_exists($action, $lesActions)) {
@@ -26,5 +26,3 @@ function ctrlPrincipal($action){
         return $lesActions["defaut"];
     }
 }
-
-?>

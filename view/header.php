@@ -8,8 +8,7 @@
             @import url("css/spe.css");
             @import url("css/listeSpe.css");
             @import url("css/carte.css");
+            @import url("css/auth.css");
         </style>
     </head>
     <body>
-
-
