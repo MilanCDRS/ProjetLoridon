@@ -3,7 +3,7 @@
     <img class=apercu src="<?php echo $spe->urlImg;?>">        
     <H6><?php echo $spe->lib;?><H6>
     <p><?php echo $spe->description;?></p>   
-    <img class=modif src="images/icons/plume.png">
+    <img class=modif src="images/icons/BlackWhiteIcons/plume.png">
 </div>
 
 
