@@ -13,3 +13,5 @@
         </style>
     </head>
     <body>
+    <a href="./?action=default">acceuil</a>
+    <a href="./?action=login">connexion</a>
