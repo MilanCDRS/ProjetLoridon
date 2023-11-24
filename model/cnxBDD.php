@@ -1,7 +1,7 @@
 <?php 
 function connexionPDO() {
-    $login = "occasauto";
-    $mdp = "occasauto";
+    $login = "root";
+    $mdp = "";
     $bd = "bouffe";
     $serveur = "127.0.0.1:3306";
 
