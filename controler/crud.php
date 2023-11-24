@@ -6,7 +6,7 @@ if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
 include "model/specialites.php";
 include "model/crud.php";
 
-$spe;
+$spe = new Specialite();
 if(isset($_GET['crud']))
 {
     $idSpe = $_GET['crud']; 
