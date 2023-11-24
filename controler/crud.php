@@ -3,10 +3,10 @@ if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
     $racine="..";
 }
 
-include "model/specialites.php";
-include "model/crud.php";
+include_once "model/specialites.php";
+include_once "model/crud.php";
 
-$spe = new Specialite();
+$spe = new Specialite("1000", GetDepartementByNumero("01"), "Nouvelle Spécialite", GetTypeByCode(1), "ingredients", "desciption");
 if(isset($_GET['crud']))
 {
     $idSpe = $_GET['crud']; 
@@ -16,7 +16,7 @@ if(isset($_GET['crud']))
 $lesTypes = GetTypes();
 $lesDeps = GetDepartements();
 
-include "$racine/view/header.php";
-include "$racine/view/crud.php";
-include "$racine/view/footer.php";
+include_once "$racine/view/header.php";
+include_once "$racine/view/crud.php";
+include_once "$racine/view/footer.php";
 ?>

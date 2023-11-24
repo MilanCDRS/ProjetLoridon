@@ -16,8 +16,8 @@ function ModifierSpecialite(Specialite $spe){
         $req = $cnx->prepare("UPDATE specialite SET 
         numeroDep='".$spe->departement->numero."', 
         lib='$spe->lib', 
-        codeType=$spe->type->code, 
-        ingredients='".$spe->ingredients."', 
+        codeType=".$spe->type->code.", 
+        ingredients='$spe->ingredients', 
         description='$spe->description' 
         WHERE id = $id");
         $req->execute();
@@ -28,11 +28,18 @@ function ModifierSpecialite(Specialite $spe){
 
 function AjouterSpecialite(Specialite $spe){
     try {
+        $numeroDep = $spe->departement->numero;
+        $lib = $spe->lib;
+        $codeType = $spe->type->code;
+        $ingredients = $spe->ingredients;
+        $description = $spe->description;
+
         $cnx = connexionPDO();
         $req = $cnx->prepare("INSERT INTO specialite (numeroDep, lib, codeType, ingredients, description) 
-        VALUES ('$spe->departement->numero', '$spe->lib', '$spe->type->code', '$spe->ingredients', $spe->description')");
+                                VALUES ('$numeroDep', '$lib', $codeType, '$ingredients', '$description')");
         $req->execute();
     } catch (PDOException $e) {
+        echo 'pb';
         die();
     } 
 }
