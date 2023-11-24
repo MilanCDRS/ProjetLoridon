@@ -13,6 +13,9 @@
   </div>
 </form>
 
+<p>pas inscrit ?</p>
+<a href="./?action=subscribe">Inscription</a>
+
 <hr>
 Utilisateur de test : <br />
 login : test@bts.sio<br />

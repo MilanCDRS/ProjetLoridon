@@ -19,6 +19,7 @@ function ctrlPrincipal($action){
 	$lesActions["login"] = "login.php";
     $lesActions["crud"] = "crud.php";
     $lesActions["logout"] = "logout.php";
+    $lesActions["subscribe"] = "subscribe.php";
 
 
     if (array_key_exists($action, $lesActions)) {
