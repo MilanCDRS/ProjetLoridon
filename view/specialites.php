@@ -19,6 +19,7 @@ foreach($lesSpecialites as $spe)
 
 <script>
 // recupere l'id de la spe selectionnée
+//
 
 const spes = document.querySelectorAll(".Specialite"); // recupere toutes les spe
 spes.forEach((spe) => 
