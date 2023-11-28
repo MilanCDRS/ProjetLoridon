@@ -10,7 +10,7 @@ class Specialite{
     private $_urlImg;
 
 
-    // Constructor
+    // Constructors
     public function __construct($id, Departement $departement, $lib, Type $type, $ingredients, $description){
         $this->_id = $id;
         $this->_departement = $departement;

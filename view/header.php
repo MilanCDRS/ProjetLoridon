@@ -9,8 +9,14 @@
             @import url("css/listeSpe.css");
             @import url("css/carte.css");
             @import url("css/auth.css");
+            
         </style>
     </head>
     <body>
     <a href="./?action=default">acceuil</a>
     <a href="./?action=login">connexion</a>
+    <?php 
+    if(isLoggedOn())
+    echo '<a href="./?action=crud">crud</a>';
+    ?>
+   
