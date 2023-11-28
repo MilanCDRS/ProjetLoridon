@@ -1,7 +1,5 @@
 <h2>Ceci est la page de auth</h2>
-<?php 
-var_dump($check);
-if($check==2){ ?>
+<?php if($check==2){ ?>
   <p>connexion fail</p>
 <?php } ?>
 <form action="./?action=login" method="POST" class="form-auth">

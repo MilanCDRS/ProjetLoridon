@@ -23,6 +23,7 @@ function login($mailU,$mdpU) {
                 $mailBD = $util["mail"];
                 $pseudoU = $util["pseudo"];
                 $dateInscription = $util["dateInscription"];
+                $adminU=$util["admin"];
             
                 //if (trim($mdpBD) == trim(crypt($idU, $mdpBD)))
                 // le mot de passe est celui de l'utilisateur dans la base de donnees
@@ -31,6 +32,7 @@ function login($mailU,$mdpU) {
                 $_SESSION["mdpU"] = $mdpBD;
                 $_SESSION["pseudoU"] = $pseudoU;
                 $_SESSION["dateInscription"] = $dateInscription;
+                $_SESSION["admin"]=$adminU;
                 $ret=1;
             }
         }
@@ -46,7 +48,7 @@ function logout() {
     unset($_SESSION["mdpU"]);
     unset($_SESSION["pseudoU"]);
     unset($_SESSION["dateInscription"]);
-    unset($_SESSION["fail"]);
+    unset($_SESSION["admin"]);
 }
 
 function getIdULoggedOn(){
@@ -70,6 +72,23 @@ function isLoggedOn() {
         $util = getUtilisateurByIdU($_SESSION["idU"]);
         if ($util["mail"] == $_SESSION["mailU"] && $util["mdp"] == $_SESSION["mdpU"]
         ) {
+            $ret = true;
+        }
+    }
+    return $ret;
+}
+
+//Ditto IsloggedOn mais n'envoie true que si l'utilisateur est admin
+function isLoggedOnAsAdmin() {
+    $ret = false;
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+
+    if (isset($_SESSION["mailU"])) {
+        $util = getUtilisateurByIdU($_SESSION["idU"]);
+        if ($util["mail"] == $_SESSION["mailU"] && $util["mdp"] == $_SESSION["mdpU"] && $_SESSION["admin"]==true) 
+        {
             $ret = true;
         }
     }
