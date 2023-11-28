@@ -9,6 +9,8 @@ class Specialite{
     private $_description;
     private $_urlImg;
 
+    private $_note;
+
 
     // Constructors
     public function __construct($id, Departement $departement, $lib, Type $type, $ingredients, $description){
