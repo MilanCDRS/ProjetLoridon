@@ -67,6 +67,23 @@ function getMailULoggedOn(){
         
 }
 
+function insertUser($pseudoU, $mailU, $mdpU){
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from User where ident=:ident");
+        $req->bindValue(':ident', $IdU, PDO::PARAM_STR);
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
+}
+
 
 
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {

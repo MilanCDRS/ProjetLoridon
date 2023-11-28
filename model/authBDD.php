@@ -95,6 +95,26 @@ function isLoggedOnAsAdmin() {
     return $ret;
 }
 
+//fonction d'inscription
+function signIn($pseudoU, $mailU, $mailconfU, $mdpU, $mdpconfU){
+    $res="";
+    //vérif contenue
+    if(!($pseudoU==''||$mdpU==''||$mailconfU==''||$mdpU==''||$mdpconfU=='')){
+        if($mailU==$mailconfU){
+            if($mdpU==$mdpconfU){
+                $util=getUtilisateurBymailU($mailU)
+                if($util==false){
+                    //fonction userBDD inscription
+                    //Si réussi, connexion
+                }
+            }
+            else $res="Le mot de passe n'est pas identique!";
+        }
+        else $res="Le mail n'est pas identique!";
+    }
+    return $res;
+}
+
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     // prog principal de test
     header('Content-Type:text/plain');
