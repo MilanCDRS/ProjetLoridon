@@ -3,27 +3,39 @@
 include_once "userBDD.php";
 
 function login($mailU,$mdpU) {
+    //0: pas de connexion
+    //1: connexion réussi 
+    //2: connexion raté
+    $ret=0;
     if(!($mailU==''||$mdpU=='')){
+        $ret=2;
         if (!isset($_SESSION)) {
             session_start();
         }
     
         $util = getUtilisateurBymailU($mailU);
-        $idU= $util["ident"];
-        $mdpBD = $util["mdp"];
-        $mailBD = $util["mail"];
-        $pseudoU = $util["pseudo"];
-        $dateInscription = $util["dateInscription"];
-    
-        //if (trim($mdpBD) == trim(crypt($idU, $mdpBD))) {
+        // le user a été retrouvé 
+        if(!$util==false){
             // le mot de passe est celui de l'utilisateur dans la base de donnees
-            $_SESSION["idU"] = $idU;
-            $_SESSION["mailU"] = $mailBD;
-            $_SESSION["mdpU"] = $mdpBD;
-            $_SESSION["pseudoU"] = $pseudoU;
-            $_SESSION["dateInscription"] = $dateInscription;
-        //}
+            if($util["mdp"]==$mdpU){
+                $idU= $util["ident"];
+                $mdpBD = $util["mdp"];
+                $mailBD = $util["mail"];
+                $pseudoU = $util["pseudo"];
+                $dateInscription = $util["dateInscription"];
+            
+                //if (trim($mdpBD) == trim(crypt($idU, $mdpBD)))
+                // le mot de passe est celui de l'utilisateur dans la base de donnees
+                $_SESSION["idU"] = $idU;
+                $_SESSION["mailU"] = $mailBD;
+                $_SESSION["mdpU"] = $mdpBD;
+                $_SESSION["pseudoU"] = $pseudoU;
+                $_SESSION["dateInscription"] = $dateInscription;
+                $ret=1;
+            }
+        }
     }
+    return $ret;
 }
 
 function logout() {
@@ -34,6 +46,7 @@ function logout() {
     unset($_SESSION["mdpU"]);
     unset($_SESSION["pseudoU"]);
     unset($_SESSION["dateInscription"]);
+    unset($_SESSION["fail"]);
 }
 
 function getIdULoggedOn(){

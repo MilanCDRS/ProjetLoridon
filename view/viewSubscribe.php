@@ -2,24 +2,24 @@
 
 <form action="./?action=login" method="POST" class="form-auth">
    <div class="form-auth">
-    <label for="mail">Pseudo: </label>
-    <input type="mail" name="mail" id="mail" required />
+    <label for="pseudo">Pseudo: </label>
+    <input type="pseudo" name="pseudo" id="pseudo" required />
   </div>
   <div class="form-auth">
-    <label for="mail">mail: </label>
-    <input type="mail" name="mail" id="mail" required />
+    <label for="submail">mail: </label>
+    <input type="submail" name="submail" id="submail" required />
   </div>
   <div class="form-auth">
-    <label for="mail">Confirmation mail: </label>
-    <input type="mail" name="mail" id="mail" required />
+    <label for="submailconf">Confirmation mail: </label>
+    <input type="submailconf" name="submailconf" id="submailconf" required />
   </div>
   <div class="form-auth">
-    <label for="mdp">Mot de passe: </label>
-    <input type="mdp" name="mdp" id="mdp" required />
+    <label for="submdp">Mot de passe: </label>
+    <input type="submdp" name="submdp" id="submdp" required />
   </div>
   <div class="form-auth">
-    <label for="mdp">Confirmation Mot de passe: </label>
-    <input type="mdp" name="mdp" id="mdp" required />
+    <label for="submdpconf">Confirmation Mot de passe: </label>
+    <input type="submdpconf" name="submdpconf" id="submdpconf" required />
   </div>
   <div class="form-auth">
     <input type="submit" value="S'inscrire" />

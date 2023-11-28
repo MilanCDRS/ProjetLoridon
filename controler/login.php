@@ -24,8 +24,7 @@ else
 
 
 // traitement si necessaire des donnees recuperees
-
-login($mailU,$mdpU);
+$check=login($mailU,$mdpU);
 
 if (isLoggedOn()){ // si l'utilisateur est connecté on redirige vers le controleur monProfil
     //include "$racine/controleur/monProfil.php";

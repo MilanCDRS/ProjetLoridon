@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS User(
     mdp VARCHAR(30) NOT NULL,
     pseudo VARCHAR(30) NOT NULL,
     dateInscription TIMESTAMP,
+    admin boolean default false, 
     PRIMARY KEY(ident,mail), 
     CONSTRAINT CK_length_MPD CHECK (length(mdp)>12)
 ) Engine=InnoDB;
