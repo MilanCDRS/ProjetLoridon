@@ -97,20 +97,28 @@ function isLoggedOnAsAdmin() {
 
 //fonction d'inscription
 function signIn($pseudoU, $mailU, $mailconfU, $mdpU, $mdpconfU){
+    echo("test");
     $res="";
     //vérif contenue
     if(!($pseudoU==''||$mdpU==''||$mailconfU==''||$mdpU==''||$mdpconfU=='')){
+        echo("test1");
         if($mailU==$mailconfU){
+            echo("test2");
             if($mdpU==$mdpconfU){
-                $util=getUtilisateurBymailU($mailU)
-                if($util==false){
-                    //fonction userBDD inscription
-                    //Si réussi, connexion
-                }
-            }
-            else $res="Le mot de passe n'est pas identique!";
-        }
-        else $res="Le mail n'est pas identique!";
+                echo("test3");
+                if(strlen($mdpU)>12){
+                    echo("test4");
+                    $util=getUtilisateurBymailU($mailU);
+                    if($util==false){
+                        echo("test5");
+                        //C'est pas très lisible, je metterais tous ces tests dans leurs propres fonctions plus tard.
+                        insertUser($pseudoU, $mailU, $mdpU);
+                        //fonction userBDD inscription
+                        //Si réussi, connexion
+                    } else $res="Le mail est déja utilisé!";
+                } else $res="Le mot de passe doit dépasser 12 charactères!";
+            } else $res="Les mots de passe ne sont pas identique!";
+        } else $res="Les mail ne sont pas identique!";
     }
     return $res;
 }

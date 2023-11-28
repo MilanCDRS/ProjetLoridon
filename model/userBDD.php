@@ -7,7 +7,7 @@ function getUtilisateurs() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from User");
+        $req = $cnx->prepare("select ident, mail, mdp, pseudo, dateInscription, admin from User");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -22,12 +22,13 @@ function getUtilisateurs() {
     return $resultat;
 }
 
+
 function getUtilisateurByIdU($IdU) {
     $resultat = array();
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from User where ident=:ident");
+        $req = $cnx->prepare("select ident, mail, mdp, pseudo, dateInscription, admin from User where ident=:ident");
         $req->bindValue(':ident', $IdU, PDO::PARAM_STR);
         $req->execute();
 
@@ -43,7 +44,7 @@ function getUtilisateurBymailU($mailU) {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from User where mail=:mail");
+        $req = $cnx->prepare("select ident, mail, mdp, pseudo, dateInscription, admin from User where mail=:mail");
         $req->bindValue(':mail', $mailU, PDO::PARAM_STR);
         $req->execute();
         
@@ -68,20 +69,23 @@ function getMailULoggedOn(){
 }
 
 function insertUser($pseudoU, $mailU, $mdpU){
-    $resultat = array();
+    //$resultat = array();
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from User where ident=:ident");
-        $req->bindValue(':ident', $IdU, PDO::PARAM_STR);
+        $req = $cnx->prepare("insert into User (pseudo, mail, mdp) values('$pseudoU','$mailU','$mdpU');");
+        //$req->bindValue(':pseudo', $pseudoU, PDO::PARAM_STR);
+        //$req->bindValue(':mail', $mailU, PDO::PARAM_STR);
+        //$req->bindValue(':mdp', $mdpU, PDO::PARAM_STR);
+        var_dump($req);
         $req->execute();
-
-        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+        
+        //$resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
         die();
     }
-    return $resultat;
+    //return $resultat;
 }
 
 
