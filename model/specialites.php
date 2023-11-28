@@ -138,7 +138,7 @@ function GetSpecialites(){
     $lesSpecialites = array();
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select id, numeroDep, lib, codeType, ingredients, description FROM Specialite;");
+        $req = $cnx->prepare("select id, numeroDep, lib, codeType, ingredients, description FROM Specialite limit 10;");
         $req->execute();
 
         $res = $req->fetch(PDO::FETCH_ASSOC);
