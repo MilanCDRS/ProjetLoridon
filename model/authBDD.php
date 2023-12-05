@@ -14,7 +14,6 @@ function login($mailU,$mdpU) {
             session_start();
         }
         $util = getUtilisateurBymailU($mailU);
-        var_dump($util);
         // le user a été retrouvé 
         if(!$util==false){
             // le mot de passe est celui de l'utilisateur dans la base de donnees
