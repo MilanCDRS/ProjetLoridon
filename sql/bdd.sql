@@ -62,7 +62,8 @@ CREATE TABLE IF NOT EXISTS Favori(
     FOREIGN KEY(idSpecialite) REFERENCES Specialite(id)
 )Engine=InnoDB;
 
-INSERT INTO User (mail, mdp, pseudo) VALUES("test@bts.sio","siosiosiosiosio","testUser");
+INSERT INTO User (mail, mdp, pseudo, admin) VALUES("test@bts.sio","siosiosiosiosio","testUser", true);
+INSERT INTO User (mail, mdp, pseudo, admin) VALUES("test","siosiosiosiosio","t", false);
 
 INSERT INTO Region (libelle) VALUES
 ("Auvergne-Rhône-Alpes"),
