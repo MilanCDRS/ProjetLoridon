@@ -1,6 +1,7 @@
 <h2>Ceci est la page de inscription</h2>
 
-<form action="./?action=login" method="POST" class="form-auth">
+<!-- a changer vers login-->
+<form action="./?action=signin" method="POST" class="form-auth">
    <div class="form-auth">
     <label for="pseudo">Pseudo: </label>
     <input type="pseudo" name="pseudo" id="pseudo" required />
@@ -21,6 +22,9 @@
     <label for="submdpconf">Confirmation Mot de passe: </label>
     <input type="submdpconf" name="submdpconf" id="submdpconf" required />
   </div>
+  <?php if($res!=""){?>
+  <p><?php echo($res) ?></p>
+  <?php } ?>
   <div class="form-auth">
     <input type="submit" value="S'inscrire" />
   </div>
