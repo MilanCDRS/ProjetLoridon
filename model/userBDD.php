@@ -95,7 +95,6 @@ function insertUser($pseudoU, $mailU, $mdpU){
         //$req->bindValue(':pseudo', $pseudoU, PDO::PARAM_STR);
         //$req->bindValue(':mail', $mailU, PDO::PARAM_STR);
         //$req->bindValue(':mdp', $mdpU, PDO::PARAM_STR);
-        var_dump($req);
         $req->execute();
         $resultat = true;
         
