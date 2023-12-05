@@ -39,6 +39,7 @@ function getUtilisateurByIdU($IdU) {
     }
     return $resultat;
 }
+
 function getUtilisateurBymailU($mailU) {
     $resultat = array();
 
@@ -51,7 +52,24 @@ function getUtilisateurBymailU($mailU) {
         $resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
-        echo("testERR");
+        die();
+    }
+    return $resultat;
+}
+
+//cherche User dans la BDD par pseudo.
+function getUtilisateurByPseudo($pseudoU) {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select ident, mail, mdp, pseudo, dateInscription, admin from User where pseudo=:pseudo");
+        $req->bindValue(':pseudo', $pseudoU, PDO::PARAM_STR);
+        $req->execute();
+        
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
         die();
     }
     return $resultat;
@@ -69,7 +87,7 @@ function getMailULoggedOn(){
 }
 
 function insertUser($pseudoU, $mailU, $mdpU){
-    //$resultat = array();
+    $resultat = false;
 
     try {
         $cnx = connexionPDO();
@@ -79,13 +97,14 @@ function insertUser($pseudoU, $mailU, $mdpU){
         //$req->bindValue(':mdp', $mdpU, PDO::PARAM_STR);
         var_dump($req);
         $req->execute();
+        $resultat = true;
         
         //$resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
         die();
     }
-    //return $resultat;
+    return $resultat;
 }
 
 

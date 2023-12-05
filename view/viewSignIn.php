@@ -1,5 +1,6 @@
 <h2>Ceci est la page de inscription</h2>
 
+<!-- a changer vers login-->
 <form action="./?action=signin" method="POST" class="form-auth">
    <div class="form-auth">
     <label for="pseudo">Pseudo: </label>
