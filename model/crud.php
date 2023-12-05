@@ -19,7 +19,7 @@ function ModifierSpecialite(Specialite $spe){
         codeType=".$spe->type->code.", 
         ingredients='$spe->ingredients', 
         description='$spe->description' 
-        WHERE id = $spe->id");
+        WHERE id = $id");
         $req->execute();
     } catch (PDOException $e) {
         die();

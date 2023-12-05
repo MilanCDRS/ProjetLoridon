@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS User(
 	ident INT(10) auto_increment,
     mail VARCHAR(320) NOT NULL,
     mdp VARCHAR(30) NOT NULL,
-    pseudo VARCHAR(50) NOT NULL,
+    pseudo VARCHAR(30) NOT NULL,
     dateInscription TIMESTAMP,
     admin boolean default false, 
     PRIMARY KEY(ident,mail), 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS Favori(
     FOREIGN KEY(idSpecialite) REFERENCES Specialite(id)
 )Engine=InnoDB;
 
-INSERT INTO User (mail, mdp, pseudo) VALUES("test@bts.sio","boydnMqI9QuVI","testUser");
+INSERT INTO User (mail, mdp, pseudo) VALUES("test@bts.sio","siosiosiosiosio","testUser");
 
 INSERT INTO Region (libelle) VALUES
 ("Auvergne-Rhône-Alpes"),

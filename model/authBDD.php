@@ -3,7 +3,6 @@
 include_once "userBDD.php";
 
 function login($mailU,$mdpU) {
-    $salt="bouffe";
     //0: pas de connexion
     //1: connexion réussi 
     //2: connexion raté
@@ -13,11 +12,12 @@ function login($mailU,$mdpU) {
         if (!isset($_SESSION)) {
             session_start();
         }
+    
         $util = getUtilisateurBymailU($mailU);
         // le user a été retrouvé 
         if(!$util==false){
             // le mot de passe est celui de l'utilisateur dans la base de donnees
-            if(trim($util["mdp"])==trim(crypt($mdpU, $salt))){
+            if($util["mdp"]==$mdpU){
                 $idU= $util["ident"];
                 $mdpBD = $util["mdp"];
                 $mailBD = $util["mail"];
@@ -95,48 +95,29 @@ function isLoggedOnAsAdmin() {
     return $ret;
 }
 
-//fonction d'inscription
-//vérifie si il y a des données a inscrire, les valides, puis appèle la fonction inserUser.
-//Retourne un message string de retour (une confirmation ou une Erreur)
-function signIn($pseudoU, $mailU, $mailconfU, $mdpU, $mdpconfU){
-    $salt="bouffe";
-    //ca marche pas si la variable est défini hors fonction donc bon ¯\_(ツ)_/¯ 
-    $res="";
-    //vérif contenue
-    if(!($pseudoU==''||$mdpU==''||$mailconfU==''||$mdpU==''||$mdpconfU=='')){
-        $res=signInValidator($pseudoU, $mailU, $mailconfU, $mdpU, $mdpconfU);
-        if($res=="valid"){
-            $insertres=insertUser($pseudoU, $mailU, trim(crypt($mdpU, $salt)));
-            if($insertres){
-                $res="Utilisateur Inscrit";
-            } else $res="ERR Echec Insersion";
-        }
+if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
+    // prog principal de test
+    header('Content-Type:text/plain');
+
+    // test de connexion
+    if (isLoggedOn()) {
+        echo "logged\n";
+    } else {
+        echo "not logged\n";
     }
-    return $res;
-}
+    
+    login("test@bts.sio", "siosiosiosiosio");
+    
+    if (isLoggedOn()) {
+        echo "logged\n";
+    } else {
+        echo "not logged\n";
+    }
 
-/*vérifie si la proposition d'inscription est valide
-Les tests performé sont:
-1. Si l'utilisateur a un pseudo original
-2. si le mail est identique a la confirmation mail
-3. si le mot de passe est de plus de 12 charactères
-4. si le mot de passe est identique avec la confirmation mot de passe
-5. si le mail est original.
-
-Retourne un message string de retour (une confirmation ou une Erreur)
-*/
-function signInValidator($pseudoU, $mailU, $mailconfU, $mdpU, $mdpconfU){
-    if(!getUtilisateurByPseudo($pseudoU)){
-        if($mailU==$mailconfU){
-            if($mdpU==$mdpconfU){
-                if(strlen($mdpU)>12){
-                    if(!getUtilisateurBymailU($mailU)){
-                        $res="valide";
-                    } else $res="Le mail est déja utilisé!";
-                } else $res="Le mot de passe doit dépasser 12 charactères!";
-            } else $res="Les mots de passe ne sont pas identiques!";
-        } else $res="Les mails ne sont pas identiques!";
-    } else $res="Le pseudo est déja utilisé !";
-    return $res;
+    $id=getIdULoggedOn();
+    echo "utilisateur connecté avec cette adresse : $id \n";
+    
+    // deconnexion
+    logout();
 }
 ?>

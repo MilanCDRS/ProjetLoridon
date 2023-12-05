@@ -17,7 +17,7 @@
 </form>
 
 <p>pas inscrit ?</p>
-<a href="./?action=signin">Inscription</a>
+<a href="./?action=subscribe">Inscription</a>
 
 <hr>
 Utilisateur de test : <br />
