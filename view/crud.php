@@ -1,8 +1,8 @@
 <?php 
   // si pas co (as Admin)
   // renvoie a l'acceuil
-  //if(!isLoggedOn())
-  //  header("location:index.php");
+  if(!isLoggedOnAsAdmin())
+    header("location:index.php");
 ?>
 
 <H1>Bienvenue dans le CRUD!</H1>

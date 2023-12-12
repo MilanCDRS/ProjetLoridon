@@ -115,18 +115,4 @@ function insertUser($pseudoU, $mailU, $mdpU){
     }
     return $resultat;
 }
-
-
-
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
-    // prog principal de test
-    header('Content-Type:text/plain');
-
-    echo "getUtilisateurs() : \n";
-    print_r(getUtilisateurs());
-
-    echo "getUtilisateurByIdU('???') : \n";
-    print_r(getUtilisateurByIdU("???"));
-
-}
 ?>

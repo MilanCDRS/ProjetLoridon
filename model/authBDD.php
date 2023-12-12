@@ -136,35 +136,9 @@ function signInValidator($pseudoU, $mailU, $mailconfU, $mdpU, $mdpconfU){
                         } else $res = "mail non valide";
                     } else $res="Le mail est déja utilisé!";
                 } else $res="Le mot de passe doit dépasser 12 charactères!";
-            } else $res="Les mots de passe ne sont pas identique!";
-        } else $res="Les mail ne sont pas identique!";
+            } else $res="Les mots de passe ne sont pas identiques!";
+        } else $res="Les mails ne sont pas identiques!";
     } else $res="Le pseudo est déja utilisé !";
     return $res;
-}
-
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
-    // prog principal de test
-    header('Content-Type:text/plain');
-
-    // test de connexion
-    if (isLoggedOn()) {
-        echo "logged\n";
-    } else {
-        echo "not logged\n";
-    }
-    
-    login("test@bts.sio", "siosiosiosiosio");
-    
-    if (isLoggedOn()) {
-        echo "logged\n";
-    } else {
-        echo "not logged\n";
-    }
-
-    $id=getIdULoggedOn();
-    echo "utilisateur connecté avec cette adresse : $id \n";
-    
-    // deconnexion
-    logout();
 }
 ?>

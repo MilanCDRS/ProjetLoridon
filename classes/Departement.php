@@ -2,7 +2,7 @@
 class Departement{
     //Variables 
     private $_numero;
-    private Region $region;
+    private $region;
     private $_nom;
 
     //Constructor
