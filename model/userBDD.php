@@ -16,8 +16,10 @@ function getUtilisateurs() {
             $ligne = $req->fetch(PDO::FETCH_ASSOC);
         }
     } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
+        //print "Erreur !: " . $e->getMessage();
+        //die();
+        $ERRmsg="ERR Utilisateur DB fail";
+        include "$racine/view/404.php";
     }
     return $resultat;
 }
@@ -34,8 +36,10 @@ function getUtilisateurByIdU($IdU) {
 
         $resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
+        //print "Erreur !: " . $e->getMessage();
+        //die();
+        $ERRmsg="ERR Utilisateur Id DB fail";
+        include "$racine/view/404.php";
     }
     return $resultat;
 }
@@ -51,8 +55,10 @@ function getUtilisateurBymailU($mailU) {
         
         $resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
+        //print "Erreur !: " . $e->getMessage();
+        //die();
+        $ERRmsg="ERR Utilisateur mail DB fail";
+        include "$racine/view/404.php";
     }
     return $resultat;
 }
@@ -69,8 +75,10 @@ function getUtilisateurByPseudo($pseudoU) {
         
         $resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
+        //print "Erreur !: " . $e->getMessage();
+        //die();
+        $ERRmsg="ERR Utilisateur Pseudo DB fail";
+        include "$racine/view/404.php";
     }
     return $resultat;
 }
@@ -100,8 +108,10 @@ function insertUser($pseudoU, $mailU, $mdpU){
         
         //$resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
+        //print "Erreur !: " . $e->getMessage();
+        //die();
+        $ERRmsg="ERR insert DB fail";
+        include "$racine/view/404.php";
     }
     return $resultat;
 }

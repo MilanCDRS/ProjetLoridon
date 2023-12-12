@@ -1,3 +1,8 @@
+<?php
+if(!isset($ERRmsg)){
+    $ERRmsg="";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,8 +70,9 @@ body{
     <h3 class="h2 text">
     Woops!
     </h3>
+    <p class="text"><?php echo($ERRmsg)?></p>
     
-    <p class="text">La page que vous cherchez n'est pas disponible</p>
+    <p class="text">Le site a un petit problème, veuillez réessayer plus tard!</p>
     
     <a href="./?action=defaut" class="link_404 text">Retour
     </a>

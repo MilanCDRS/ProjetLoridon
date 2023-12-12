@@ -6,7 +6,9 @@ function DeleteSpecialite(Specialite $spe){
         $req = $cnx->prepare("DELETE FROM specialite WHERE id = $spe->id");
         $req->execute();
     } catch (PDOException $e) {
-        die();
+        //die();
+        $ERRmsg="ERR Delete DB fail";
+        include "$racine/view/404.php";
     } 
 }
 
@@ -22,7 +24,9 @@ function ModifierSpecialite(Specialite $spe){
         WHERE id = $id");
         $req->execute();
     } catch (PDOException $e) {
-        die();
+        //die();
+        $ERRmsg="ERR Modifier DB fail";
+        include "$racine/view/404.php";
     } 
 }
 
@@ -39,8 +43,10 @@ function AjouterSpecialite(Specialite $spe){
                                 VALUES ('$numeroDep', '$lib', $codeType, '$ingredients', '$description')");
         $req->execute();
     } catch (PDOException $e) {
-        echo 'pb';
-        die();
+        //echo 'pb';
+        //die();
+        $ERRmsg="ERR Ajouter DB fail";
+        include "$racine/view/404.php";
     } 
 }
 ?>

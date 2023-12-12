@@ -17,7 +17,8 @@ function GetRegions(){
     }
     catch (PDOExeption $e)
     { 
-        //echo 'oops';
+        $ERRmsg="ERR Region DB fail";
+        include "$racine/view/404.php";
     }
 
     return $regions;
@@ -48,7 +49,8 @@ function GetRegionByNom($libele){
 
         $region = new Region($res['code'], $res['libelle']);
     } catch (PDOException $e) {
-        die();
+        $ERRmsg="ERR Region Nom DB fail";
+        include "$racine/view/404.php";
     }
     return $region;
 }
@@ -71,7 +73,8 @@ function GetDepartements(){
     }
     catch (PDOExeption $e)
     { 
-        //echo 'oops';
+        $ERRmsg="ERR Departement DB fail";
+        include "$racine/view/404.php";
     }
 
     return $deparetements;
@@ -88,7 +91,8 @@ function GetDepartementByNumero($numero){
         $region = GetRegionByCode($res['codeRegion']);
         $departement = new Departement($res['numero'], $region, $res['nom']);
     } catch (PDOException $e) {
-        die();
+        $ERRmsg="ERR Departement Num DB fail";
+        include "$racine/view/404.php";
     }
     return $departement;
 }
@@ -110,7 +114,8 @@ function GetTypes(){
     }
     catch (PDOExeption $e)
     { 
-        //echo 'oops';
+        $ERRmsg="ERR Types DB fail";
+        include "$racine/view/404.php";
     }
 
     return $types;
@@ -126,7 +131,9 @@ function GetTypeByCode($code){
 
         $type = new Type($res['code'], $res['type']);
     } catch (PDOException $e) {
-        die();
+        $ERRmsg="ERR get type code DB fail";
+        include "$racine/view/404.php";
+        //die();
     }
     return $type;
 }
@@ -154,6 +161,8 @@ function GetSpecialites(){
     catch (PDOExeption $e)
     { 
         //echo 'oops';
+        $ERRmsg="ERR Specialites DB fail";
+        include "$racine/view/404.php";
     }
 
     return $lesSpecialites;
@@ -171,7 +180,8 @@ function GetSpecialiteById($id){
         $type = GetTypeByCode($res['codeType']);
         $spe = new Specialite($res['id'], $dep, $res['lib'], $type, $res['ingredients'], $res['description']);
     } catch (PDOException $e) {
-        die();
+        $ERRmsg="ERR Specialite by ID DB fail";
+        include "$racine/view/404.php";
     }
     return $spe;
 }
@@ -196,7 +206,8 @@ function GetSpecialitesByRegion(Region $region){
     }
     catch (PDOExeption $e)
     { 
-        //echo 'oops';
+        $ERRmsg="ERR Specialite Region DB fail";
+        include "$racine/view/404.php";
     }
 
     return $lesSpecialites;
