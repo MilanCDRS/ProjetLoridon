@@ -7,7 +7,7 @@ function getUtilisateurs() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from User");
+        $req = $cnx->prepare("select ident, mail, mdp, pseudo, dateInscription, admin from User");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -22,12 +22,13 @@ function getUtilisateurs() {
     return $resultat;
 }
 
+
 function getUtilisateurByIdU($IdU) {
     $resultat = array();
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from User where ident=:ident");
+        $req = $cnx->prepare("select ident, mail, mdp, pseudo, dateInscription, admin from User where ident=:ident");
         $req->bindValue(':ident', $IdU, PDO::PARAM_STR);
         $req->execute();
 
@@ -38,19 +39,37 @@ function getUtilisateurByIdU($IdU) {
     }
     return $resultat;
 }
+
 function getUtilisateurBymailU($mailU) {
     $resultat = array();
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from User where mail=:mail");
+        $req = $cnx->prepare("select ident, mail, mdp, pseudo, dateInscription, admin from User where mail=:mail");
         $req->bindValue(':mail', $mailU, PDO::PARAM_STR);
         $req->execute();
         
         $resultat = $req->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
-        echo("testERR");
+        die();
+    }
+    return $resultat;
+}
+
+//cherche User dans la BDD par pseudo.
+function getUtilisateurByPseudo($pseudoU) {
+    $resultat = array();
+
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select ident, mail, mdp, pseudo, dateInscription, admin from User where pseudo=:pseudo");
+        $req->bindValue(':pseudo', $pseudoU, PDO::PARAM_STR);
+        $req->execute();
+        
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
         die();
     }
     return $resultat;
@@ -67,17 +86,23 @@ function getMailULoggedOn(){
         
 }
 
+function insertUser($pseudoU, $mailU, $mdpU){
+    $resultat = false;
 
-
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
-    // prog principal de test
-    header('Content-Type:text/plain');
-
-    echo "getUtilisateurs() : \n";
-    print_r(getUtilisateurs());
-
-    echo "getUtilisateurByIdU('???') : \n";
-    print_r(getUtilisateurByIdU("???"));
-
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("insert into User (pseudo, mail, mdp) values('$pseudoU','$mailU','$mdpU');");
+        //$req->bindValue(':pseudo', $pseudoU, PDO::PARAM_STR);
+        //$req->bindValue(':mail', $mailU, PDO::PARAM_STR);
+        //$req->bindValue(':mdp', $mdpU, PDO::PARAM_STR);
+        $req->execute();
+        $resultat = true;
+        
+        //$resultat = $req->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+    return $resultat;
 }
 ?>

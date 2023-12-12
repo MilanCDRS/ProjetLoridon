@@ -17,7 +17,7 @@
     <a href="./?action=default">acceuil</a>
     <a href="./?action=login">connexion</a>
     <?php 
-    if(isLoggedOn())
-    echo '<a href="./?action=crud">crud</a>';
+    if(isLoggedOnAsAdmin())
+        echo '<a href="./?action=crud">crud</a>';
     ?>
    

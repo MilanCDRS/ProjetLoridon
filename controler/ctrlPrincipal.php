@@ -16,11 +16,11 @@ function ctrlPrincipal($action){
     $lesActions = array();
     $lesActions["defaut"] = "specialites.php";
     $lesActions["specialites"] = "specialites.php";
-	$lesActions["login"] = "login.php";
+	  $lesActions["login"] = "login.php";
     $lesActions["crud"] = "crud.php";
     $lesActions["logout"] = "logout.php";
-    $lesActions["subscribe"] = "subscribe.php";
     $lesActions["star"] = "star.php";
+    $lesActions["signin"] = "signin.php";
 
 
     if (array_key_exists($action, $lesActions)) {
