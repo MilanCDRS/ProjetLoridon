@@ -21,7 +21,7 @@ function toPX($note){
     </div>
     <p><?php echo $spe->note ?> / 5</p>
     <?php
-    if(isLoggedOn()){
+    if(isLoggedOnAsAdmin()){
         echo '<img class=modif src="images/icons/BlackWhiteIcons/plume.png">';
         echo " <script>// Clic CRUD
         const modif = document.querySelector('.modif');
@@ -31,6 +31,11 @@ function toPX($note){
                 window.location.href = '?crud='+spe.id;
             }
         )
+        </script>";
+    }
+    if(isLoggedOn()){
+        echo "
+        <script>
         // Fonction note -> px
         // Clic des étoiles
         const color = document.querySelector('.color-stars');
