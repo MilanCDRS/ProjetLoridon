@@ -74,8 +74,8 @@ body{
     
     <p class="text">Le site a un petit problème, veuillez réessayer plus tard!</p>
     
-    <a href="./?action=defaut" class="link_404 text">Retour
-    </a>
+    <!-- <a href="./?action=defaut" class="link_404 text">Retour
+    </a>-->
   </div>
     </div>
     </div>
