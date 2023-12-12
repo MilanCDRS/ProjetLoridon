@@ -26,14 +26,14 @@ class Specialite{
     // Getters 
     public function __get($propriete) {
         switch ($propriete) {
-            case "id" : return $this->_id; break;
-            case "departement" : return $this->_departement; break;
-            case "lib" : return $this->_lib; break;
-            case "type" : return $this->_type; break;
-            case "ingredients" : return $this->_ingredients; break;
-            case "description" : return $this->_description; break;
-            case "urlImg" : return $this->_urlImg; break;
-            case "note" : return $this->_note; break;
+            case "id" : return $this->_id;
+            case "departement" : return $this->_departement;
+            case "lib" : return $this->_lib;
+            case "type" : return $this->_type;
+            case "ingredients" : return $this->_ingredients;
+            case "description" : return $this->_description;
+            case "urlImg" : return $this->_urlImg;
+            case "note" : return $this->_note;
         }
     }
 
@@ -46,8 +46,8 @@ class Specialite{
             case "type" : $this->_type = $value; break;
             case "ingredients" : $this->_ingredients = $value; break;
             case "description" : $this->_description = $value; break;
-            case "urlImg" : return $this->_urlImg; break;
-            case "note" : return $this->_note; break;
+            case "urlImg" : $this->_urlImg = $value; break;
+            case "note" : $this->_note = $value; break;
         }
     }
 
