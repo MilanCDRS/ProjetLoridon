@@ -3,6 +3,7 @@ if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
     $racine="..";
 }
 include_once "model/specialites.php";
+include_once "model/star.php";
 
 include "view/header.php";
 
