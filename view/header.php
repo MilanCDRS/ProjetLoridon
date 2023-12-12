@@ -9,6 +9,7 @@
             @import url("css/listeSpe.css");
             @import url("css/carte.css");
             @import url("css/auth.css");
+            @import url("css/stars.css");
             
         </style>
     </head>

@@ -1,0 +1,15 @@
+.content-stars {
+    display: flex;
+    flex-direction:row;   
+}
+
+.star{
+    padding:0px;
+    margin:0px;
+    width:20; 
+    height:20;
+}
+
+.color-stars{
+    background-color: gold;
+}
