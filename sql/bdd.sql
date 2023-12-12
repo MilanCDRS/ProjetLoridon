@@ -72,6 +72,68 @@ CREATE TABLE IF NOT EXISTS Note(
     FOREIGN KEY(idSpecialite) REFERENCES Specialite(id)
 )Engine=InnoDB;
 
+DELIMITER $
+
+DROP PROCEDURE if exists GetRegions$
+CREATE PROCEDURE GetRegions ()
+BEGIN
+	SELECT code, libelle FROM Region;
+END $
+
+DROP PROCEDURE if exists GetRegionByCode$
+CREATE PROCEDURE GetRegionByCode(IN _code INT(3))
+BEGIN
+	SELECT code, libelle FROM region WHERE code = _code;
+END $
+
+DROP PROCEDURE if exists GetRegionByNom$
+CREATE PROCEDURE GetRegionByNom(IN _libelle VARCHAR(50))
+BEGIN
+	SELECT code, libelle FROM region WHERE libelle = _libelle;
+END $
+
+DROP PROCEDURE if exists GetDepartements$
+CREATE PROCEDURE GetDepartements()
+BEGIN
+	SELECT numero, codeRegion, nom FROM departement;
+END $
+
+DROP PROCEDURE if exists GetDepartementByNumero$
+CREATE PROCEDURE GetDepartementByNumero(IN _numero VARCHAR(3))
+BEGIN
+	SELECT numero, codeRegion, nom FROM departement WHERE numero = _numero;
+END $
+
+DROP PROCEDURE if exists GetType$
+CREATE PROCEDURE GetType()
+BEGIN
+	SELECT code, type FROM type;
+END $
+
+DROP PROCEDURE if exists GetTypeByCode$
+CREATE PROCEDURE GetTypeByCode(IN _code INT(3))
+BEGIN
+	SELECT code, type FROM type WHERE code = _code;
+END $
+
+DROP PROCEDURE if exists GetSpecialites$
+CREATE PROCEDURE GetSpecialites()
+BEGIN
+	SELECT id, numeroDep, lib, codeType, ingredients, description FROM Specialite limit 25;
+END $
+
+DROP PROCEDURE if exists GetSpecialiteById$
+CREATE PROCEDURE GetSpecialiteById(IN _id INT(3))
+BEGIN
+	select id, numeroDep, lib, codeType, ingredients, description FROM Specialite inner join departement on numeroDep = numero WHERE id = _id ;
+END $
+
+DROP PROCEDURE if exists GetSpecialitesByRegion$
+CREATE PROCEDURE GetSpecialitesByRegion(IN _code INT(3))
+BEGIN
+	select id, numeroDep, lib, codeType, ingredients, description FROM Specialite inner join departement on numeroDep = numero WHERE codeRegion = _code;
+END $
+
 INSERT INTO User (mail, mdp, pseudo) VALUES("test@bts.sio","boydnMqI9QuVI","testUser");
 
 INSERT INTO Region (libelle) VALUES
