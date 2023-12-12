@@ -62,6 +62,16 @@ CREATE TABLE IF NOT EXISTS Favori(
     FOREIGN KEY(idSpecialite) REFERENCES Specialite(id)
 )Engine=InnoDB;
 
+DROP TABLE IF EXISTS Note;
+CREATE TABLE IF NOT EXISTS Note(
+	identUser INT(10) NOT NULL,
+    idSpecialite INT(10) NOT NULL,
+    note INT(1)  NOT NULL,
+    PRIMARY KEY(identUser,idSpecialite),
+    FOREIGN KEY(identUser) REFERENCES User(ident),
+    FOREIGN KEY(idSpecialite) REFERENCES Specialite(id)
+)Engine=InnoDB;
+
 INSERT INTO User (mail, mdp, pseudo) VALUES("test@bts.sio","boydnMqI9QuVI","testUser");
 
 INSERT INTO Region (libelle) VALUES
