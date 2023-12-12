@@ -8,7 +8,7 @@ function DeleteSpecialite(Specialite $spe){
     } catch (PDOException $e) {
         //die();
         $ERRmsg="ERR Delete DB fail";
-        include "$racine/view/404.php";
+        header("Location: view/404.php");
     } 
 }
 
@@ -26,7 +26,7 @@ function ModifierSpecialite(Specialite $spe){
     } catch (PDOException $e) {
         //die();
         $ERRmsg="ERR Modifier DB fail";
-        include "$racine/view/404.php";
+        header("Location: view/404.php");
     } 
 }
 
@@ -46,7 +46,7 @@ function AjouterSpecialite(Specialite $spe){
         //echo 'pb';
         //die();
         $ERRmsg="ERR Ajouter DB fail";
-        include "$racine/view/404.php";
+        header("Location: view/404.php");
     } 
 }
 ?>

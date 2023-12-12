@@ -19,7 +19,7 @@ function getUtilisateurs() {
         //print "Erreur !: " . $e->getMessage();
         //die();
         $ERRmsg="ERR Utilisateur DB fail";
-        include "$racine/view/404.php";
+        header("Location: view/404.php");
     }
     return $resultat;
 }
@@ -39,7 +39,7 @@ function getUtilisateurByIdU($IdU) {
         //print "Erreur !: " . $e->getMessage();
         //die();
         $ERRmsg="ERR Utilisateur Id DB fail";
-        include "$racine/view/404.php";
+        header("Location: view/404.php");
     }
     return $resultat;
 }
@@ -58,7 +58,7 @@ function getUtilisateurBymailU($mailU) {
         //print "Erreur !: " . $e->getMessage();
         //die();
         $ERRmsg="ERR Utilisateur mail DB fail";
-        include "$racine/view/404.php";
+        header("Location: view/404.php");
     }
     return $resultat;
 }
@@ -78,7 +78,7 @@ function getUtilisateurByPseudo($pseudoU) {
         //print "Erreur !: " . $e->getMessage();
         //die();
         $ERRmsg="ERR Utilisateur Pseudo DB fail";
-        include "$racine/view/404.php";
+        header("Location: view/404.php");
     }
     return $resultat;
 }
@@ -111,7 +111,7 @@ function insertUser($pseudoU, $mailU, $mdpU){
         //print "Erreur !: " . $e->getMessage();
         //die();
         $ERRmsg="ERR insert DB fail";
-        include "$racine/view/404.php";
+        header("Location: view/404.php");
     }
     return $resultat;
 }
