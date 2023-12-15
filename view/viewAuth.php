@@ -1,7 +1,14 @@
-<h2>Ceci est la page de auth</h2>
-<?php if($check==2){ ?>
+
+<?php if(isset($check) && $check==2){ ?>
   <p>connexion fail</p>
 <?php } ?>
+
+<h2 class="login title">Welcome Heaume</h2>
+
+<h3 class="login title">Connexion</h3>
+
+<hr>
+
 <form action="./?action=login" method="POST" class="form-auth">
   <div class="form-auth">
     <label for="mail">mail: </label>

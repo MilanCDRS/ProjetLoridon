@@ -1,4 +1,18 @@
-<h2>Ceci est la page de inscription</h2>
+
+<p class="signintxt">Vous souhaitez vous souvenir de vos victuailles préférées ? </p>
+<p class="signinintxt">Celles qui font la fierté de votre terroir et le bonheur de vos papilles ? </p>
+<p class="signinintxt"><b>Créez un compte</b> sur note site La bouffe de là-bas et ces pouvoirs seront votre :</p>
+
+<ul class="signinlisttxt">
+  <li>Alimenter votre parchemin de favoris</li>
+  <li>Graver un commentaire</li>
+  <li>Évaluer les mets dont vous aimez (ou non !) vous repaître</li>
+  
+</ul>
+
+<h3 class="signintitle">Inscription</h3>
+
+<hr>
 
 <!-- a changer vers login-->
 <form action="./?action=signin" method="POST" class="form-auth">
@@ -31,4 +45,4 @@
 </form>
 
 <p>inscrit ?</p>
-<a href="./?action=login">Inscription</a>
+<a href="./?action=login">Connexion</a>
