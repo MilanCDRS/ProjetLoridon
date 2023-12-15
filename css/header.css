@@ -1,0 +1,27 @@
+html{
+    background-image: url(../images/Visuals/fondManuscrit.png);
+}   
+
+header{
+    position: fixed;
+    background-image: url(../images/Visuals/HeaderCenter.png);
+    background-size: 40%;
+    background-repeat: repeat-x;
+    height: 200px;
+    width: 100%;
+    margin: -10px 0px 0px -10px;
+}
+
+header .side{
+    width: 2.65%;
+}
+
+header .right{
+    transform: scale(-1,1);
+    float:right;
+}
+
+#header{
+    width: 1px;
+    padding-bottom: 120px;
+}

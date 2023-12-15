@@ -10,14 +10,19 @@
             @import url("css/carte.css");
             @import url("css/auth.css");
             @import url("css/stars.css");
-            
+            @import url("css/header.css");            
         </style>
     </head>
     <body>
-    <a href="./?action=default">acceuil</a>
-    <a href="./?action=login">connexion</a>
-    <?php 
-    if(isLoggedOnAsAdmin())
-        echo '<a href="./?action=crud">crud</a>';
-    ?>
+        <header>
+            <img class="side left" src="images/Visuals/HeaderSide.png">
+            <img class="side right" src="images/Visuals/HeaderSide.png">
+            <a class=accueil href="./?action=default">acceuil</a>
+            <a class=cnx href="./?action=login">connexion</a>
+            <?php 
+            if(!isLoggedOnAsAdmin())
+                echo '<a class=crud href="./?action=crud">CRUD</a>';
+            ?>
+        </header>
+        <div id=header></div>
    
