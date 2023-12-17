@@ -12,11 +12,11 @@ function toPX($note){
     <p><?php echo $spe->description;?></p> 
     <div spe="<?php echo $spe->id; ?>" class="color-stars" style="height:20px;width:<?php echo toPX($spe->note);?>px;"> 
         <div class="content-stars" style="height:20px;width:100px">
-            <img id="<?php echo $spe->id; ?>_1" class=Star src="images/starv2.png">      
-            <img id="<?php echo $spe->id; ?>_2" class=Star src="images/starv2.png">   
-            <img id="<?php echo $spe->id; ?>_3" class=Star src="images/starv2.png">   
-            <img id="<?php echo $spe->id; ?>_4" class=Star src="images/starv2.png">   
-            <img id="<?php echo $spe->id; ?>_5" class=Star src="images/starv2.png">
+            <img id="<?php echo $spe->id; ?>_1" class=Star src="images/icons/starv2.png">      
+            <img id="<?php echo $spe->id; ?>_2" class=Star src="images/icons/starv2.png">   
+            <img id="<?php echo $spe->id; ?>_3" class=Star src="images/icons/starv2.png">   
+            <img id="<?php echo $spe->id; ?>_4" class=Star src="images/icons/starv2.png">   
+            <img id="<?php echo $spe->id; ?>_5" class=Star src="images/icons/starv2.png">
         </div>
     </div>
     <p><?php echo $spe->note ?> / 5</p>

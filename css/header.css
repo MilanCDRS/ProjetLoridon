@@ -1,0 +1,61 @@
+html{
+    background-image: url(../images/Visuals/fondManuscrit.png);
+}   
+
+header{
+    position: fixed;
+    background-image: url(../images/Visuals/HeaderCenter.png);
+    background-size: 40%;
+    background-repeat: repeat-x;
+    height: 200px;
+    width: 100%;
+    margin: -10px 0px 0px -10px;
+}
+
+header .side{
+    width: 2.65%;
+}
+
+header .right{
+    transform: scale(-1,1);
+    float:right;
+}
+
+header a{
+    margin-top:10px;
+    position:absolute;
+    padding: 25px 50px;
+    color:white; 
+    background-position-x: left;
+    background-position-y: center;
+    background-size: 50px;
+    background-repeat: no-repeat;
+}
+
+
+header .accueil{
+    background-image: url(../images/icons/BlackWhiteIcons/castle.png);
+}
+
+header .crud{
+    right:0;
+    margin-right:150px;  
+    background-image: url(../images/icons/BlackWhiteIcons/whiteManuscript.png);  
+}
+
+header .cnx{
+    right:0;
+    background-image: url(../images/icons/BlackWhiteIcons/whiteKnight.png);
+}
+
+header #logo{
+    margin-top:20px;
+    position:absolute;
+    width:50px;
+    left:49%;
+}
+
+#header{
+    width: 1px;
+    padding-bottom: 120px;
+}
