@@ -1,9 +1,6 @@
 <?php
    
 function connexionPDO() {
-    //$login = "occasauto";
-    //$mdp = "occasauto";
-    //NOTE: ne pas oublier de changer ca!
     $login = "root";
     $mdp = "";
     $bd = "bouffe";
