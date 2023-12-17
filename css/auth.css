@@ -15,3 +15,10 @@
   label {
     padding-right: 10px;
   }
+
+  div.middleelement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

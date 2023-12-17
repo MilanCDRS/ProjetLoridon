@@ -1,8 +1,11 @@
 <?php
    
 function connexionPDO() {
-    $login = "occasauto";
-    $mdp = "occasauto";
+    //$login = "occasauto";
+    //$mdp = "occasauto";
+    //NOTE: ne pas oublier de changer ca!
+    $login = "root";
+    $mdp = "";
     $bd = "bouffe";
     $serveur = "127.0.0.1:3306";
 $rac = dirname(__FILE__); 
