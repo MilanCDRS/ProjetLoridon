@@ -11,9 +11,7 @@ path {
     fill: black;
 }
 g:hover path {
-    /*fill: #A90000;*/
-    fill: rgb(223, 108, 108);
-    fill: rgb(199, 139, 70);
+    fill: #a90000;
 }
 
 g path:hover {

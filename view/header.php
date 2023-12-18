@@ -16,14 +16,14 @@
     <body>
         <header>
             <div class="bannerinside">
-                <img id=logo src="images/Visuals/logo.png">
+                <img id=logo src="images/Visuals/France.svg">
                 <a class=accueil href="./?action=default">Accueil</a>           
                 <?php 
                 if(isLoggedOnAsAdmin())
                     //CRUD s'affiche que si un admin est connecté
                     echo '<a class=crud href="./?action=crud">CRUD</a>';
                 ?>
-                <a class=cnx href="./?action=login">Se Connecter</a>
+                <a class=cnx href="./?action=login">Compte</a>
             </div>
         </header>
         <div id=header></div>
