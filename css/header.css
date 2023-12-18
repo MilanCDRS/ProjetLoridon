@@ -49,10 +49,10 @@ header .cnx{
 }
 
 header #logo{
-    margin-top:20px;
+    margin-top: 0.5%;
     position:absolute;
-    width:50px;
-    left:49%;
+    width:10%;
+    left:45%;
 }
 
 #header{

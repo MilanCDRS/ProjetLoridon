@@ -31,11 +31,11 @@
     </div>
     <div class="form-auth">
       <label for="submdp">Mot de passe: </label>
-      <input type="submdp" name="submdp" id="submdp" required />
+      <input type="password" name="submdp" id="submdp" required />
     </div>
     <div class="form-auth">
       <label for="submdpconf">Confirmation Mot de passe: </label>
-      <input type="submdpconf" name="submdpconf" id="submdpconf" required />
+      <input type="password" name="submdpconf" id="submdpconf" required />
     </div>
     <?php if($res!=""){?>
     <p><?php echo($res) ?></p>
@@ -46,5 +46,5 @@
   </form>
 
   <p>inscrit ?</p>
-  <a href="./?action=login">Connexion</a>
+  <a href="./?action=login" class="btnAuth">Connexion</a>
 </div>

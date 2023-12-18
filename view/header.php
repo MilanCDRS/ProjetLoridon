@@ -15,7 +15,7 @@
     </head>
     <body>
         <header>
-            <img id=logo src="images/icons/BlackWhiteIcons/whiteKnight.png">
+            <img id=logo src="images/Visuals/logo.png">
             <img class="side left" src="images/Visuals/HeaderSide.png">
             <img class="side right" src="images/Visuals/HeaderSide.png">
             <a class=accueil href="./?action=default">Acceuil</a>           

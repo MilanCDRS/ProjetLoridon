@@ -16,7 +16,7 @@
     </div>
     <div class="form-auth">
       <label for="mdp">Mot de passe: </label>
-      <input type="mdp" name="mdp" id="mdp" required />
+      <input type="password" name="mdp" id="mdp" required />
     </div>
     <div class="form-auth">
       <input type="submit" value="Envoyer" />
@@ -24,7 +24,7 @@
   </form>
 
   <p>pas inscrit ?</p>
-  <a href="./?action=signin">Inscription</a>
+  <a href="./?action=signin" class="btnAuth">Inscription</a>
 <!--
   <hr>
 
