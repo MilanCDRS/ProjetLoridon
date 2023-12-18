@@ -5,7 +5,6 @@
   div.form-auth {
     display: table-row;
   }
-  
   label,
   input {
     display: table-cell;

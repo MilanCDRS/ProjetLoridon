@@ -27,57 +27,7 @@
             </div>
         </header>
         <div id=header></div>
-        <section class="carousel" aria-label="Gallery">
-        <ol class="carousel__viewport">
-            <li id="carousel__slide1"
-                tabindex="0"
-                class="carousel__slide">
-            <div class="carousel__snapper">
-                <a href="#carousel__slide4">
-                <a href="#carousel__slide2">
-            </div>
-            </li>
-            <li id="carousel__slide2"
-                tabindex="0"
-                class="carousel__slide">
-            <div class="carousel__snapper"></div>
-            <a href="#carousel__slide1">
-            <a href="#carousel__slide3">
-            </li>
-            <li id="carousel__slide3"
-                tabindex="0"
-                class="carousel__slide">
-            <div class="carousel__snapper"></div>
-            <a href="#carousel__slide2">
-            <a href="#carousel__slide4">
-            </li>
-            <li id="carousel__slide4"
-                tabindex="0"
-                class="carousel__slide">
-            <div class="carousel__snapper"></div>
-            <a href="#carousel__slide3">
-            <a href="#carousel__slide1">
-            </li>
-        </ol>
-            <aside class="carousel__navigation">
-                <ol class="carousel__navigation-list">
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide1"
-                    class="carousel__navigation-button">Go to slide 1</a>
-                </li>
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide2"
-                    class="carousel__navigation-button">Go to slide 2</a>
-                </li>
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide3"
-                    class="carousel__navigation-button">Go to slide 3</a>
-                </li>
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide4"
-                    class="carousel__navigation-button">Go to slide 4</a>
-                </li>
-                </ol>
-            </aside>
-    </section>
+        <!-- Bootsrap et JQuerry -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    
