@@ -12,4 +12,7 @@
 
 .color-stars{
     background-color: gold;
+    border: solid 1px black;
+    border-radius: 20px;
+    overflow: hidden;
 }
