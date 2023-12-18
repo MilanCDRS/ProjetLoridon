@@ -15,6 +15,10 @@ if(isset($_GET["crud"])){
     $action = "crud";
 }
 
+if(isset($_GET["star"])){
+    $action = "star";
+}
+
 $fichier = ctrlPrincipal($action);
 include "$racine/controler/$fichier";
 ?>

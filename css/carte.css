@@ -1,22 +1,21 @@
 .carte {
-    display: block;
-    width: 35%;
-    margin: 0;
+    width:45%;
+    margin: auto;
 }
-
 path {
-    stroke: #ffffff;
+    stroke: white;
     stroke-width: 1px;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-opacity: .25;
-    fill: #000000;
+    fill: black;
 }
-
 g:hover path {
+    /*fill: #A90000;*/
+    fill: rgb(223, 108, 108);
     fill: rgb(199, 139, 70);
 }
 
 g path:hover {
-    fill: #a90000;
+    fill: #690101;
 }

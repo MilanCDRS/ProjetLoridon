@@ -2,12 +2,13 @@
 class Specialite{
     // variables
     private $_id;
-    private Departement $_departement;
+    private  $_departement;
     private $_lib;
-    private Type $_type;
+    private  $_type;
     private $_ingredients;
     private $_description;
     private $_urlImg;
+    private $_note;
 
 
     // Constructors
@@ -19,6 +20,7 @@ class Specialite{
         $this->_ingredients = $ingredients;
         $this->_description = $description;
         $this->_urlImg = $this->GetUrlImg();
+        $this->_note = $this->GetNote();
     }
 
     // Getters 
@@ -31,6 +33,7 @@ class Specialite{
             case "ingredients" : return $this->_ingredients; break;
             case "description" : return $this->_description; break;
             case "urlImg" : return $this->_urlImg; break;
+            case "note" : return $this->_note; break;
         }
     }
 
@@ -44,6 +47,7 @@ class Specialite{
             case "ingredients" : $this->_ingredients = $value; break;
             case "description" : $this->_description = $value; break;
             case "urlImg" : return $this->_urlImg; break;
+            case "note" : return $this->_note; break;
         }
     }
 
@@ -60,6 +64,19 @@ class Specialite{
             $url = "images/IconesSpe/SansFond/$img$num.png";
         }
         return $url;
+    }
+
+    public function GetNote(){
+        $notes = GetNotes($this->_id);
+        $notesTotal = count($notes);
+        $cNote = 0;
+        foreach ($notes as $note) {
+            $cNote+=$note->note;
+        }
+        if ($cNote > 0)
+        {$cNote /= $notesTotal;}
+        round($cNote,0.1);
+        return $cNote;
     }
 }
 

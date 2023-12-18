@@ -5,7 +5,7 @@ function GetRegions(){
     $regions = array();
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select code, libelle FROM Region;");
+        $req = $cnx->prepare("call GetRegions;");
         $req->execute();
 
         $res = $req->fetch(PDO::FETCH_ASSOC);
@@ -17,7 +17,8 @@ function GetRegions(){
     }
     catch (PDOExeption $e)
     { 
-        //echo 'oops';
+        $ERRmsg="ERR Region DB fail";
+        header("Location: view/404.php");
     }
 
     return $regions;
@@ -27,7 +28,7 @@ function GetRegions(){
 function GetRegionByCode($code){
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select code, libelle from region where code = '$code'");
+        $req = $cnx->prepare("call GetRegionByCode($code);");
         $req->execute();
         $res = $req->fetch(PDO::FETCH_ASSOC);
 
@@ -39,16 +40,17 @@ function GetRegionByCode($code){
 }
 
 // Recupere la region en fct de son nom
-function GetRegionByNom($libele){
+function GetRegionByNom($libelle){
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select code, libelle from region where libele = '$libele'");
+        $req = $cnx->prepare("call GetRegionByNom('$libele');");
         $req->execute();
         $res = $req->fetch(PDO::FETCH_ASSOC);
 
         $region = new Region($res['code'], $res['libelle']);
     } catch (PDOException $e) {
-        die();
+        $ERRmsg="ERR Region Nom DB fail";
+        header("Location: view/404.php");
     }
     return $region;
 }
@@ -58,7 +60,7 @@ function GetDepartements(){
     $deparetements = array();
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select numero, codeRegion, nom FROM Departement Order By numero;");
+        $req = $cnx->prepare("call GetDepartements();");
         $req->execute();
 
         $res = $req->fetch(PDO::FETCH_ASSOC);
@@ -71,7 +73,8 @@ function GetDepartements(){
     }
     catch (PDOExeption $e)
     { 
-        //echo 'oops';
+        $ERRmsg="ERR Departement DB fail";
+        header("Location: view/404.php");
     }
 
     return $deparetements;
@@ -81,14 +84,15 @@ function GetDepartements(){
 function GetDepartementByNumero($numero){
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select numero, codeRegion, nom from departement where numero = '$numero'");
+        $req = $cnx->prepare("call GetDepartementByNumero('$numero');");
         $req->execute();
 
         $res = $req->fetch(PDO::FETCH_ASSOC);
         $region = GetRegionByCode($res['codeRegion']);
         $departement = new Departement($res['numero'], $region, $res['nom']);
     } catch (PDOException $e) {
-        die();
+        $ERRmsg="ERR Departement Num DB fail";
+        header("Location: view/404.php");
     }
     return $departement;
 }
@@ -98,7 +102,7 @@ function GetTypes(){
     $types = array();
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select code, type FROM Type;");
+        $req = $cnx->prepare("call GetType();");
         $req->execute();
 
         $res = $req->fetch(PDO::FETCH_ASSOC);
@@ -110,7 +114,8 @@ function GetTypes(){
     }
     catch (PDOExeption $e)
     { 
-        //echo 'oops';
+        $ERRmsg="ERR Types DB fail";
+        header("Location: view/404.php");
     }
 
     return $types;
@@ -120,13 +125,15 @@ function GetTypes(){
 function GetTypeByCode($code){
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select code, type from type where code = '$code'");
+        $req = $cnx->prepare("call GetTypeByCode($code)");
         $req->execute();
         $res = $req->fetch(PDO::FETCH_ASSOC);
 
         $type = new Type($res['code'], $res['type']);
     } catch (PDOException $e) {
-        die();
+        $ERRmsg="ERR get type code DB fail";
+        header("Location: view/404.php");
+        //die();
     }
     return $type;
 }
@@ -138,7 +145,7 @@ function GetSpecialites(){
     $lesSpecialites = array();
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select id, numeroDep, lib, codeType, ingredients, description FROM Specialite limit 10;");
+        $req = $cnx->prepare("call GetSpecialites();");
         $req->execute();
 
         $res = $req->fetch(PDO::FETCH_ASSOC);
@@ -154,6 +161,9 @@ function GetSpecialites(){
     catch (PDOExeption $e)
     { 
         //echo 'oops';
+        $ERRmsg="ERR Specialites DB fail";
+        header("Location: view/404.php");
+        //
     }
 
     return $lesSpecialites;
@@ -163,7 +173,7 @@ function GetSpecialites(){
 function GetSpecialiteById($id){
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select id, numeroDep, lib, codeType, ingredients, description FROM Specialite inner join departement on numeroDep = numero WHERE id = $id ;");
+        $req = $cnx->prepare("call GetSpecialiteById($id);");
         $req->execute();
         $res = $req->fetch(PDO::FETCH_ASSOC);
         
@@ -171,7 +181,8 @@ function GetSpecialiteById($id){
         $type = GetTypeByCode($res['codeType']);
         $spe = new Specialite($res['id'], $dep, $res['lib'], $type, $res['ingredients'], $res['description']);
     } catch (PDOException $e) {
-        die();
+        $ERRmsg="ERR Specialite by ID DB fail";
+        header("Location: view/404.php");
     }
     return $spe;
 }
@@ -181,7 +192,7 @@ function GetSpecialitesByRegion(Region $region){
     $lesSpecialites = array();
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select id, numeroDep, lib, codeType, ingredients, description FROM Specialite inner join departement on numeroDep = numero WHERE codeRegion = $region->code ;");
+        $req = $cnx->prepare("call GetSpecialitesByRegion($region->code);");
         $req->execute();
 
         $res = $req->fetch(PDO::FETCH_ASSOC);
@@ -196,7 +207,8 @@ function GetSpecialitesByRegion(Region $region){
     }
     catch (PDOExeption $e)
     { 
-        //echo 'oops';
+        $ERRmsg="ERR Specialite Region DB fail";
+        header("Location: view/404.php");
     }
 
     return $lesSpecialites;

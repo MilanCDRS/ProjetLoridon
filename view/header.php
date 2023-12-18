@@ -9,29 +9,25 @@
             @import url("css/listeSpe.css");
             @import url("css/carte.css");
             @import url("css/auth.css");
-            @import url("css/footer.css");
-            @import url("css/header.css");
+            @import url("css/stars.css");
+            @import url("css/header.css");            
         </style>
     </head>
-
-    <header>
-        <div id="accueil">
-            <img class="castle" src="images/icons/BlackWhiteIcons/castle.png";
-            <a href="./?action=default">Accueil</a>
-        </div>
-        <img class="France" src="images/icons/BlackWhiteIcons/France.png";
-        <div id="compte">
-            <img class="castle" src="images/icons/BlackWhiteIcons/Wknight.png";
-            <a href="./?action=login">Compte</a>
-        </div>
-    
-        <?php 
-        if(isLoggedOn())
-        echo '<a href="./?action=crud">crud</a>';
-        ?>
-    </header>
-   
-    <section class="carousel" aria-label="Gallery">
+    <body>
+        <header>
+            <div class="bannerinside">
+                <img id=logo src="images/Visuals/logo.png">
+                <a class=accueil href="./?action=default">Accueil</a>           
+                <?php 
+                if(isLoggedOnAsAdmin())
+                    //CRUD s'affiche que si un admin est connecté
+                    echo '<a class=crud href="./?action=crud">CRUD</a>';
+                ?>
+                <a class=cnx href="./?action=login">Se Connecter</a>
+            </div>
+        </header>
+        <div id=header></div>
+        <section class="carousel" aria-label="Gallery">
         <ol class="carousel__viewport">
             <li id="carousel__slide1"
                 tabindex="0"
@@ -84,4 +80,4 @@
                 </ol>
             </aside>
     </section>
-</html>
+   
