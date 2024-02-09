@@ -1,0 +1,46 @@
+#content-spe{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#titre{
+    text-align: center;
+    width: 100%;
+}
+
+.Specialite{
+    width:430px;
+    margin:15px;
+    padding:10px;
+    border: solid 2px rgba(0, 0, 0, 0.237);
+    border-radius: 20px;
+    background-color: rgba(255, 246, 224, 0.475);
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.Specialite div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    text-align: justify;
+}
+
+.Specialite .img{
+   width: 30%;
+}
+
+.Specialite .text{
+    width: 65%;
+}
+
+ .Specialite .apercu{
+    width: 160px;
+}
+
+.Specialite .blason{
+    width: 35px;
+}

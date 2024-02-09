@@ -1,0 +1,65 @@
+  .home{
+    height: 70px;
+  }
+  
+  form.form-auth {
+    display: table;
+  }
+  
+  div.form-auth {
+    display: table-row;
+  }
+
+  label,
+  input {
+    display: table-cell;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  label {
+    padding-right: 10px;
+  }
+
+  input[type="submit"] {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 100%;
+  }
+  input[type="submit"]:hover {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(231, 137, 14);
+  }
+
+  div.middleelement {
+    font-size: 18px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p{
+    margin: 7px 0;
+    text-align: left;
+  }
+
+  .labas{
+    color:white;
+    font-weight: 600;
+    font-size: 19px;
+  }
+
+  .btnAuth{
+    padding: 10px;
+    background-color: rgb(169,0,0);
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+  }
+  .btnAuth:hover{
+    background-color: rgb(231, 137, 14);
+  }
