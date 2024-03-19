@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>  
 
-
-    <footer class="footer">
+    <footer>
+    </footer>
+    
 </html>  
