@@ -1,3 +1,3 @@
 <h1>Deconnexion</h1>
-Vous etes bien deconnecté
+Vous êtes bien déconnecté !
 <br />

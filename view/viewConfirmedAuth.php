@@ -5,7 +5,7 @@ Mon adresse électronique : <?= getMailULoggedOn() ?> <br />
 
 <hr>
 
-<a href="./?action=logout">se deconnecter</a>
+<a href="./?action=logout">Se Déconnecter</a>
  
 <?php
 ?>

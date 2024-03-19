@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+p{
+    font-size: 20px;
+}
+
 .modif{
     height: 50px;
 }

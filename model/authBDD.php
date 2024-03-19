@@ -135,7 +135,7 @@ function signInValidator($pseudoU, $mailU, $mailconfU, $mdpU, $mdpconfU){
                             $res="valid";
                         } else $res = "mail non valide";
                     } else $res="Le mail est déja utilisé!";
-                } else $res="Le mot de passe doit dépasser 12 charactères!";
+                } else $res="Le mot de passe doit dépasser 12 caractères!";
             } else $res="Les mots de passe ne sont pas identiques!";
         } else $res="Les mails ne sont pas identiques!";
     } else $res="Le pseudo est déja utilisé !";

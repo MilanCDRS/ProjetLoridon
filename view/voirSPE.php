@@ -10,7 +10,7 @@ function toPX($note){
         <img class=blason src="images/departements/<?php echo $spe->departement->numero;?>.png" >
         <img class=apercu src="<?php echo $spe->urlImg;?>">
     </div>   
-    <H6><?php echo $spe->lib;?><H6>
+    <H2><?php echo $spe->lib;?><H2>
     <p><?php echo $spe->description;?></p> 
     <div spe="<?php echo $spe->id; ?>" class="color-stars" style="height:20px;width:<?php echo toPX($spe->note);?>px;"> 
         <div class="content-stars" style="height:20px;width:100px">
@@ -50,9 +50,3 @@ function toPX($note){
     
     
 </div>
-
-
-<script>
-
-
-</script>

@@ -43,6 +43,6 @@
     </div>
   </form>
 
-  <p>Vous possédez déja un compte ?</p>
+  <p>Vous possédez déjà un compte ?</p>
   <a href="./?action=login" class="btnAuth">Se Connecter</a>
 </div>
