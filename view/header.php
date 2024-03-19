@@ -33,7 +33,17 @@
 
                 <div class="compte">
                     <img id=knight src="images/icons/BlackWhiteIcons/WKnight.png">
-                    <a class=cnx href="./?action=login">Compte</a>
+                    <?php
+                        if(isLoggedOn()){
+                    ?>
+                        <a class=cnx href="./?action=login">Déconnexion</a>
+                    <?php
+                        } else {
+                    ?>
+                        <a class=cnx href="./?action=login">Compte</a>
+                    <?php
+                        }
+                    ?>
                 </div>
 
             </div>
