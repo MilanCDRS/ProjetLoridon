@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
   .home{
     height: 70px;
   }
@@ -8,7 +6,6 @@
     margin-left: 10px;
   }
   
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
   form.form-auth {
     display: table;
   }
@@ -16,28 +13,17 @@
   div.form-auth {
     display: table-row;
   }
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
   label,
   input {
     display: table-cell;
     margin-bottom: 10px;
-<<<<<<< HEAD
-=======
     border-radius: 8px;
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
   }
   
   label {
     padding-right: 10px;
   }
 
-<<<<<<< HEAD
-  div.middleelement {
-=======
   input[type="submit"] {
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
@@ -52,13 +38,10 @@
   div.middleelement {
     font-size: 18px;
     margin-top: 30px;
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
-=======
   }
 
   p{
@@ -82,5 +65,4 @@
   }
   .btnAuth:hover{
     background-color: rgb(231, 137, 14);
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
   }

@@ -11,13 +11,6 @@ path {
     fill: black;
 }
 g:hover path {
-<<<<<<< HEAD
-    fill: #A90000;
-}
-
-g path:hover {
-    fill: #690101;
-=======
     fill: rgb(199, 139, 70);
 }
 
@@ -40,5 +33,4 @@ g path:hover {
     color: #f9b300;
     -webkit-text-stroke-color: rgb(0, 0, 0);
     -webkit-text-stroke-width: 0.8px;
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
 }

@@ -28,11 +28,7 @@ function GetRegions(){
 function GetRegionByCode($code){
     try {
         $cnx = connexionPDO();
-<<<<<<< HEAD
-        $req = $cnx->prepare("call GetRegionByCode($code);");
-=======
         $req = $cnx->prepare("CALL GetRegionByCode($code);");
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
         $req->execute();
         $res = $req->fetch(PDO::FETCH_ASSOC);
 

@@ -13,15 +13,9 @@
     width:430px;
     margin:15px;
     padding:10px;
-<<<<<<< HEAD
-    border: solid 1px rgb(236, 236, 151);
-    border-radius: 20px;
-    background-color: rgb(241, 232, 157);
-=======
     border: solid 2px rgba(0, 0, 0, 0.237);
     border-radius: 20px;
     background-color: rgba(255, 246, 224, 0.475);
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;

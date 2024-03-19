@@ -1,9 +1,5 @@
 <?php 
-<<<<<<< HEAD
-echo "<H1 id=titre>$libTitre<H1>";
-=======
 echo "<H1 id=titre>$libTitre</H1>";
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
 ?>
 
 <div id=content-spe>

@@ -13,12 +13,6 @@ $rac = dirname(__FILE__);
     } catch (PDOException $e) {
         $ERRmsg="ERR Connection DB fail";
         header("Location: view/404.php");
-<<<<<<< HEAD
-		//echo $e;
-        //print " Erreur de connexion PDO ";
-        //die();
-=======
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
     }
 }
 ?>

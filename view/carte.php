@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -64,7 +62,6 @@
 <!--Carrousel ici-->
 
 
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
 <div class="carte">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 667 578" xml:space="preserve">
 
@@ -229,11 +226,7 @@
 </div>
 
 <script>
-<<<<<<< HEAD
-// recupere le code de la region avec click sur balise g avec nom de l'id et donner valeur a php pour rechgercher specialites par region
-=======
 // recupere le code de la region avec click sur balise g avec nom de l'id et donner valeur a php pour rechercher specialites par region
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
 
 const regions = document.querySelectorAll("g");
 regions.forEach((reg) => 

@@ -75,11 +75,7 @@ CREATE TABLE IF NOT EXISTS Note(
 DELIMITER $
 
 DROP PROCEDURE if exists GetRegions$
-<<<<<<< HEAD
-CREATE PROCEDURE GetRegions ()
-=======
 CREATE PROCEDURE GetRegions()
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
 BEGIN
 	SELECT code, libelle FROM Region;
 END $
@@ -268,13 +264,4 @@ INSERT INTO Type (type) VALUES
 ('Vin'),
 ('Fromage'),
 ('Brevages & Autres'),
-<<<<<<< HEAD
 ('Autre');
-
-
-
-
-
-=======
-('Autre');
->>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
