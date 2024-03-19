@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+.modif{
+    height: 50px;
+}
+
 .thumbnails img{
     height: 250px;
 }

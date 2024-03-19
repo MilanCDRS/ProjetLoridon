@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteRule controler view\404.php [L,R] 
+
+RewriteRule images view\404.php [L,R] 
+
+RewriteRule model view\404.php [L,R] 
+
+RewriteRule sql view\404.php [L,R] 
+
+RewriteRule classes view\404.php [L,R] 

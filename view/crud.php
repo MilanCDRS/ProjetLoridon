@@ -7,7 +7,7 @@
 
 <H1>Bienvenue dans le CRUD!</H1>
 
-<form method="POST">
+<form method="POST" class=crudform>
     <div>
       <label for="libelle">Nom :</label>
       <input type="text" id="libelle" name="libelle" value="<?php echo $spe->lib?>" required></input>
