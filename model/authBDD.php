@@ -108,8 +108,13 @@ function signIn($pseudoU, $mailU, $mailconfU, $mdpU, $mdpconfU){
         if($res=="valid"){
             $insertres=insertUser($pseudoU, $mailU, trim(crypt($mdpU, $salt)));
             if($insertres){
-                $res="Utilisateur Inscrit";
-            } else $res="ERR Echec Insersion";
+                echo '<script type="text/javascript">
+                window.onload = function () { alert("Inscription réussie, Bienvenue !\n Vous pouvez désormais vous connecter"); } 
+                </script>'; 
+            } else {
+                $ERRmsg="ERR Connection DB fail";
+                header("Location: view/404.php");
+            }
         }
     }
     return $res;

@@ -28,7 +28,7 @@
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     margin-top: 10px;
-    /*margin-left: 10px;*/
+    font-size: 15px;
   }
   input[type="submit"]:hover {
     background-color: rgba(255, 255, 255, 0);
@@ -62,6 +62,7 @@
     text-decoration: none;
     color: white;
     font-weight: 700;
+    font-size: 15px;
   }
   .btnAuth:hover{
     background-color: rgb(231, 137, 14);
