@@ -6,8 +6,10 @@ function toPX($note){
 ?>
 
 <div class=Spe id="<?php echo $spe->id; ?>">
-    <img class=blason src="images/departements/<?php echo $spe->departement->numero;?>.png" >
-    <img class=apercu src="<?php echo $spe->urlImg;?>">        
+    <div class="thumbnails">
+        <img class=blason src="images/departements/<?php echo $spe->departement->numero;?>.png" >
+        <img class=apercu src="<?php echo $spe->urlImg;?>">
+    </div>   
     <H6><?php echo $spe->lib;?><H6>
     <p><?php echo $spe->description;?></p> 
     <div spe="<?php echo $spe->id; ?>" class="color-stars" style="height:20px;width:<?php echo toPX($spe->note);?>px;"> 
@@ -19,7 +21,7 @@ function toPX($note){
             <img id="<?php echo $spe->id; ?>_5" class=Star src="images/icons/starv2.png">
         </div>
     </div>
-    <p><?php echo $spe->note ?> / 5</p>
+    <!--<p><?php echo $spe->note ?> / 5</p>-->
     <?php
     if(isLoggedOn()){
         echo '<img class=modif src="images/icons/BlackWhiteIcons/plume.png">';

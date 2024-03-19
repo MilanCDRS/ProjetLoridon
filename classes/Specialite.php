@@ -1,4 +1,5 @@
 <?php
+include_once "model/star.php";
 class Specialite{
     // variables
     private $_id;

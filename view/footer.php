@@ -2,6 +2,5 @@
 <html>  
 
 
-    <footer>
-    <footer>
+    <footer class="footer">
 </html>  
