@@ -135,6 +135,7 @@ BEGIN
 END $
 
 INSERT INTO User (mail, mdp, pseudo) VALUES("test@bts.sio","boydnMqI9QuVI","testUser");
+INSERT INTO User (mail, mdp, pseudo, admin) VALUES("test@test.fr","boMLg2kWGgLXo","test", true);
 Insert Into User (mail, mdp, pseudo) Values("coco@coco.fr", "123456azerty+++", "coco");
 
 INSERT INTO Region (libelle) VALUES
