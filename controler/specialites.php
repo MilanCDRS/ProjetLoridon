@@ -6,7 +6,6 @@ include_once "model/star.php";
 include_once "model/specialites.php";
 
 include "view/header.php";
-include "view/footer.php";
 
 // Affiche toutes les spécialités
 $spe;
@@ -47,4 +46,3 @@ else{
 
 
 include "view/footer.php";
-//include "view/footer.php";
