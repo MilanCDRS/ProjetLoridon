@@ -1,8 +1,6 @@
 RewriteEngine On
 
-RewriteRule controler view\404.php [L,R] 
-
-RewriteRule images view\404.php [L,R] 
+RewriteRule controler view\404.php [L,R]
 
 RewriteRule model view\404.php [L,R] 
 
