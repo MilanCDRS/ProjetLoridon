@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+  .home{
+    height: 70px;
+  }
+
+  .crudform{
+    margin-left: 10px;
+  }
+  
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
   form.form-auth {
     display: table;
   }
@@ -5,20 +16,71 @@
   div.form-auth {
     display: table-row;
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
   label,
   input {
     display: table-cell;
     margin-bottom: 10px;
+<<<<<<< HEAD
+=======
+    border-radius: 8px;
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
   }
   
   label {
     padding-right: 10px;
   }
 
+<<<<<<< HEAD
   div.middleelement {
+=======
+  input[type="submit"] {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-top: 10px;
+    /*margin-left: 10px;*/
+  }
+  input[type="submit"]:hover {
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(231, 137, 14);
+  }
+
+  div.middleelement {
+    font-size: 18px;
+    margin-top: 30px;
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
+=======
+  }
+
+  p{
+    margin: 7px 0;
+    text-align: left;
+  }
+
+  .labas{
+    color:white;
+    font-weight: 600;
+    font-size: 19px;
+  }
+
+  .btnAuth{
+    padding: 10px;
+    background-color: rgb(169,0,0);
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+  }
+  .btnAuth:hover{
+    background-color: rgb(231, 137, 14);
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
   }

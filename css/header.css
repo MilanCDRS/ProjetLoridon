@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html{
     background-image: url(../images/Visuals/fondManuscrit.png);
 }   
@@ -5,11 +6,24 @@ html{
 header{
     position: fixed;
     background-image: url(../images/Visuals/HeaderCenter.png);
+=======
+body{
+    background-color: transparent !important;
+}  
+
+header{
+    position: fixed;
+    background-image: url(../images/Visuals/Header/HeaderCenter.png);
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
     background-size: 40%;
     background-repeat: repeat-x;
     height: 200px;
     width: 100%;
+<<<<<<< HEAD
     margin: -10px 0px 0px -10px;
+=======
+    z-index: 1;
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
 }
 
 header .side{
@@ -22,6 +36,7 @@ header .right{
 }
 
 header a{
+<<<<<<< HEAD
     margin-top:10px;
     position:absolute;
     padding: 25px 50px;
@@ -53,9 +68,92 @@ header #logo{
     position:absolute;
     width:50px;
     left:49%;
+=======
+    margin-top: 2.5%;
+    position: absolute;
+    color:white; 
+    text-decoration: none;
+}
+header a{
+    background:
+      linear-gradient(
+        to right,
+        rgba(100, 200, 200, 0),
+        rgba(100, 200, 200, 0)
+      ),
+      linear-gradient(
+        to right,
+        rgb(137, 2, 2),
+        rgb(231, 89, 13),
+        rgb(255, 206, 82)
+    );
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+a:hover{
+    background-size: 0 3px, 100% 3px;
+}
+  
+
+.accueil{
+    position: absolute;
+    left: 4.8%;
+    top: 15%;
+}
+.accueil:hover{
+    color: white;
+    text-decoration: none;
+}
+.accueil:visited{
+    color: white;
+    text-decoration: none;
+}
+header #castle{
+    position: absolute;
+    left: 4.5%;
+    top: 4%;
+    height: 53px;
+    z-index: 2;
+}
+
+.cnx{
+    position: absolute;
+    right: 4.8%;
+    top: 15%;
+}
+.cnx:hover{
+    color: white;
+    text-decoration: none;
+}
+.cnx:visited{
+    color: white;
+    text-decoration: none;
+}
+header #knight{
+    position: absolute;
+    right: 4.5%;
+    top: 4%;
+    height: 53px;
+}
+
+header #logo{
+    margin-top: 0.5%;
+    position: absolute;
+    width: 13%;
+    left: 44%;
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
 }
 
 #header{
     width: 1px;
     padding-bottom: 120px;
 }
+<<<<<<< HEAD
+=======
+
+header{
+    z-index: 16;
+}
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e

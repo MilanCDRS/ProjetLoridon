@@ -1,0 +1,19 @@
+.Spe {
+    padding-bottom: 0px;
+    background-color: rgba(255, 246, 224, 0.475);
+    border: solid 2px rgba(0, 0, 0, 0.237);
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 200px;
+    align-items: center;
+}
+
+.modif{
+    height: 50px;
+}
+
+.thumbnails img{
+    height: 250px;
+}

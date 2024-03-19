@@ -1,3 +1,70 @@
+<<<<<<< HEAD
+=======
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+	<h2 class="gaule">Venez découvrir toutes les saveurs de la Gaule</h2>
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+	  <li data-target="#myCarousel" data-slide-to="2"></li>
+	  <li data-target="#myCarousel" data-slide-to="3"></li>
+	  <li data-target="#myCarousel" data-slide-to="4"></li>
+	  <li data-target="#myCarousel" data-slide-to="5"></li>
+	  <li data-target="#myCarousel" data-slide-to="6"></li>
+	  <li data-target="#myCarousel" data-slide-to="7"></li>
+	  <li data-target="#myCarousel" data-slide-to="8"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="images/Visuals/Bannières/repas-10.png" alt="Repas1" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="images/Visuals/Bannières/repas-11.png" alt="Repas2" style="width:100%;">
+      </div>
+	  <div class="item">
+        <img src="images/Visuals/Bannières/repas-9.png" alt="Repas3" style="width:100%;">
+      </div>
+	  <div class="item">
+        <img src="images/Visuals/Bannières/repas-8.png" alt="Repas4" style="width:100%;">
+      </div>
+	  <div class="item">
+        <img src="images/Visuals/Bannières/repas-7.jfif" alt="Repas5" style="width:100%;">
+      </div>
+	  <div class="item">
+        <img src="images/Visuals/Bannières/repas-4.jfif" alt="Repas6" style="width:100%;">
+      </div>
+	  <div class="item">
+        <img src="images/Visuals/Bannières/repas-3.jfif" alt="Repas7" style="width:100%;">
+      </div>
+	  <div class="item">
+        <img src="images/Visuals/Bannières/repas-2.jfif" alt="Repas8" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--Carrousel ici-->
+
+
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
 <div class="carte">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 667 578" xml:space="preserve">
 
@@ -162,7 +229,11 @@
 </div>
 
 <script>
+<<<<<<< HEAD
 // recupere le code de la region avec click sur balise g avec nom de l'id et donner valeur a php pour rechgercher specialites par region
+=======
+// recupere le code de la region avec click sur balise g avec nom de l'id et donner valeur a php pour rechercher specialites par region
+>>>>>>> ae68efcb1830a03b35db876194fd4788b938839e
 
 const regions = document.querySelectorAll("g");
 regions.forEach((reg) => 
