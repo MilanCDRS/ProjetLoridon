@@ -53,6 +53,8 @@ CREATE TABLE IF NOT EXISTS User(
     CONSTRAINT CK_length_MPD CHECK (length(mdp)>12)
 ) Engine=InnoDB;
 
+INSERT INTO User (mail, mdp, pseudo, dateInscription) VALUES ('test@test.fr', 'boMLg2kWGgLXo', 'test', null);
+
 DROP TABLE IF EXISTS Favori;
 CREATE TABLE IF NOT EXISTS Favori(
 	identUser INT(10) NOT NULL,
